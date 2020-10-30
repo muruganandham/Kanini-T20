@@ -35,7 +35,11 @@ class TripViewController: UIViewController {
         }
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     @objc func onBackButton(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
         do {

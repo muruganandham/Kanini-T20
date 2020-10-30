@@ -9,6 +9,8 @@ target 'KT20' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'NVActivityIndicatorView', '= 4.8.0'
+  pod 'lottie-ios'
 
   target 'KT20Tests' do
     inherit! :search_paths

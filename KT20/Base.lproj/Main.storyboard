@@ -16,27 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1a-UV-kug">
-                                <rect key="frame" x="125.5" y="430" width="163" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Log In with Google"/>
-                                <connections>
-                                    <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kig-cN-EYo"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hl-dY-pG9" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="G1a-UV-kug" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FzU-3q-CKo"/>
-                            <constraint firstItem="G1a-UV-kug" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UBN-ze-IRy"/>
+                            <constraint firstItem="9hl-dY-pG9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6OB-l0-kJr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9hl-dY-pG9" secondAttribute="bottom" constant="-34" id="Bj7-58-OfT"/>
+                            <constraint firstItem="9hl-dY-pG9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ghI-wQ-6DJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9hl-dY-pG9" secondAttribute="trailing" id="mVq-gr-gxW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ymQ-kE-iR7"/>
+                    <connections>
+                        <outlet property="animationView" destination="9hl-dY-pG9" id="gcb-vI-ZtR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="55"/>
+            <point key="canvasLocation" x="853.62318840579712" y="54.910714285714285"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="3hB-fY-Kpq">
@@ -81,7 +82,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="bIe-a6-KxF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="UA7-be-ocv"/>
                 </viewController>
@@ -142,6 +143,9 @@
             <point key="canvasLocation" x="79.710144927536234" y="54.910714285714285"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="9hl-dY-pG9"/>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
