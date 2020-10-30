@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		52E6F1F5254C7FCA0098DA75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1ED254C7FCA0098DA75 /* LoginViewController.swift */; };
 		52E6F1FA254C7FD10098DA75 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1F9254C7FD10098DA75 /* SplashViewController.swift */; };
 		52E6F1FF254C7FDA0098DA75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F1FE254C7FDA0098DA75 /* GoogleService-Info.plist */; };
+		52E6F28A254C8D820098DA75 /* 6843-map-location.json in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F289254C8D820098DA75 /* 6843-map-location.json */; };
 		5596E5CCFD467D8A27336574 /* Pods_KT20Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB45ADAA30FCBE1B31D64714 /* Pods_KT20Tests.framework */; };
 		87C4509D3225DA4AAE823DC2 /* Pods_KT20.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC6BAEEE8A1C2808399EED /* Pods_KT20.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		52E6F1ED254C7FCA0098DA75 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52E6F1F9254C7FD10098DA75 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		52E6F1FE254C7FDA0098DA75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		52E6F289254C8D820098DA75 /* 6843-map-location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "6843-map-location.json"; sourceTree = "<group>"; };
 		7313749CDD0C4348D64183D6 /* Pods-KT20-KT20UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.debug.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F0381E28975F884137ABCE4 /* Pods-KT20.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20.debug.xcconfig"; path = "Target Support Files/Pods-KT20/Pods-KT20.debug.xcconfig"; sourceTree = "<group>"; };
 		9EF3BE8A35B9DEAAE0BD5DE0 /* Pods-KT20Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.release.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		52E6F1E8254C7FCA0098DA75 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				52E6F289254C8D820098DA75 /* 6843-map-location.json */,
 				52E6F1E9254C7FCA0098DA75 /* travel.gpx */,
 			);
 			path = TestData;
@@ -206,7 +209,6 @@
 				4912C920B590CDA8E2CC2278 /* Pods-KT20Tests.debug.xcconfig */,
 				9EF3BE8A35B9DEAAE0BD5DE0 /* Pods-KT20Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -332,6 +334,7 @@
 			files = (
 				52E6F1BA254C7F6E0098DA75 /* LaunchScreen.storyboard in Resources */,
 				52E6F1F2254C7FCA0098DA75 /* travel.gpx in Resources */,
+				52E6F28A254C8D820098DA75 /* 6843-map-location.json in Resources */,
 				52E6F1FF254C7FDA0098DA75 /* GoogleService-Info.plist in Resources */,
 				52E6F1B7254C7F6E0098DA75 /* Assets.xcassets in Resources */,
 				52E6F1B5254C7F6D0098DA75 /* Main.storyboard in Resources */,

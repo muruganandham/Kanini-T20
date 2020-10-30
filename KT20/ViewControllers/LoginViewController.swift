@@ -8,17 +8,18 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import NVActivityIndicatorView
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var loginButton: UIButton!
     
     var onLogIn: ((User?) -> Void)?
     var onLogOut: (() -> Void)?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.updateButtonToLogOut()
     }
     
@@ -40,6 +41,9 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
         GIDSignIn.sharedInstance().delegate = self
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            ViewManager.shared.activityIndicatorView.startAnimating(ActivityData())
+        }
     }
     
     // MARK: - Methods
@@ -94,11 +98,18 @@ extension LoginViewController: GIDSignInDelegate {
                                     "username": user.displayName ?? "",
                                     "createdOn": Date().timeIntervalSinceReferenceDate])
                 self.onLogIn?(user)
+                ViewManager.shared.activityIndicatorView.stopAnimating()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+                    ViewManager.shared.activityIndicatorView.stopAnimating()
+                }
             }
         }
     }
-
+    
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print(error.localizedDescription)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            ViewManager.shared.activityIndicatorView.stopAnimating()
+        }
     }
 }

@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import NVActivityIndicatorView
 
 public class ViewManager {
     public static let shared = ViewManager()
+    let activityIndicatorView  = NVActivityIndicatorPresenter.sharedInstance
 
 }
