@@ -7,6 +7,8 @@ target 'KT20' do
 
   # Pods for KT20
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   target 'KT20Tests' do
     inherit! :search_paths

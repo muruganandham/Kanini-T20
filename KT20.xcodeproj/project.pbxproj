@@ -183,6 +183,7 @@
 				52E6F03D254B284F0098DA75 /* Frameworks */,
 				52E6F03E254B284F0098DA75 /* Resources */,
 				8F5A3BBF1CF0D8BF62F52DC2 /* [CP] Embed Pods Frameworks */,
+				4F131EC9C964C7AB1BCA2498 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +222,7 @@
 				52E6F05E254B28510098DA75 /* Frameworks */,
 				52E6F05F254B28510098DA75 /* Resources */,
 				90F233504776CAC6C9999669 /* [CP] Embed Pods Frameworks */,
+				3F014A9F20769C97D8B3F35C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,6 +347,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F014A9F20769C97D8B3F35C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F131EC9C964C7AB1BCA2498 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8F5A3BBF1CF0D8BF62F52DC2 /* [CP] Embed Pods Frameworks */ = {
