@@ -21,6 +21,8 @@
 		52E6F156254C53700098DA75 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F155254C53700098DA75 /* TripViewController.swift */; };
 		52E6F15B254C539E0098DA75 /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F15A254C539E0098DA75 /* SpotsViewController.swift */; };
 		52E6F160254C53A90098DA75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F15F254C53A90098DA75 /* LoginViewController.swift */; };
+		52E6F16B254C578F0098DA75 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F16A254C578F0098DA75 /* LocationManager.swift */; };
+		52E6F171254C58650098DA75 /* travel.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F170254C58650098DA75 /* travel.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		52E6F155254C53700098DA75 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		52E6F15A254C539E0098DA75 /* SpotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsViewController.swift; sourceTree = "<group>"; };
 		52E6F15F254C53A90098DA75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		52E6F16A254C578F0098DA75 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		52E6F170254C58650098DA75 /* travel.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = travel.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				52E6F043254B284F0098DA75 /* AppDelegate.swift */,
 				52E6F045254B284F0098DA75 /* SceneDelegate.swift */,
 				52E6F047254B284F0098DA75 /* SplashViewController.swift */,
+				52E6F16F254C58400098DA75 /* TestData */,
 				52E6F13A254C51DC0098DA75 /* Utilities */,
 				52E6F139254C51C00098DA75 /* ViewControllers */,
 				52E6F049254B284F0098DA75 /* Main.storyboard */,
@@ -155,11 +160,20 @@
 		52E6F13A254C51DC0098DA75 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				52E6F16A254C578F0098DA75 /* LocationManager.swift */,
 				52E6F13E254C52610098DA75 /* Constants.swift */,
 				52E6F143254C52700098DA75 /* ViewManager.swift */,
 				52E6F148254C52940098DA75 /* UIExtras.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		52E6F16F254C58400098DA75 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				52E6F170254C58650098DA75 /* travel.gpx */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E6F050254B28510098DA75 /* LaunchScreen.storyboard in Resources */,
+				52E6F171254C58650098DA75 /* travel.gpx in Resources */,
 				52E6F04D254B28510098DA75 /* Assets.xcassets in Resources */,
 				52E6F04B254B284F0098DA75 /* Main.storyboard in Resources */,
 			);
@@ -294,6 +309,7 @@
 			files = (
 				52E6F160254C53A90098DA75 /* LoginViewController.swift in Sources */,
 				52E6F048254B284F0098DA75 /* SplashViewController.swift in Sources */,
+				52E6F16B254C578F0098DA75 /* LocationManager.swift in Sources */,
 				52E6F044254B284F0098DA75 /* AppDelegate.swift in Sources */,
 				52E6F156254C53700098DA75 /* TripViewController.swift in Sources */,
 				52E6F149254C52940098DA75 /* UIExtras.swift in Sources */,

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+public class ViewManager {
+    public static let shared = ViewManager()
+
+}
