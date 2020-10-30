@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112852431580AC3759B487C4 /* Pods_KT20Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8122D7C0F7115FAFF28CD7 /* Pods_KT20Tests.framework */; };
+		2A960571254C60EB00BDACAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A960570254C60EB00BDACAD /* GoogleService-Info.plist */; };
+		424A1F924AA7B592403F799D /* Pods_KT20.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06448CDDAF9F69BB195DB787 /* Pods_KT20.framework */; };
 		52E6F044254B284F0098DA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F043254B284F0098DA75 /* AppDelegate.swift */; };
 		52E6F046254B284F0098DA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F045254B284F0098DA75 /* SceneDelegate.swift */; };
 		52E6F048254B284F0098DA75 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F047254B284F0098DA75 /* SplashViewController.swift */; };
@@ -21,6 +24,7 @@
 		52E6F156254C53700098DA75 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F155254C53700098DA75 /* TripViewController.swift */; };
 		52E6F15B254C539E0098DA75 /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F15A254C539E0098DA75 /* SpotsViewController.swift */; };
 		52E6F160254C53A90098DA75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F15F254C53A90098DA75 /* LoginViewController.swift */; };
+		B2C0091A4C4B6859D8051BD7 /* Pods_KT20_KT20UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46110EEFC3FCA10627ABAE2B /* Pods_KT20_KT20UITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06448CDDAF9F69BB195DB787 /* Pods_KT20.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KT20.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2396E98394FCBD7C3B12718E /* Pods-KT20.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20.debug.xcconfig"; path = "Target Support Files/Pods-KT20/Pods-KT20.debug.xcconfig"; sourceTree = "<group>"; };
+		2A8122D7C0F7115FAFF28CD7 /* Pods_KT20Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KT20Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A960570254C60EB00BDACAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46110EEFC3FCA10627ABAE2B /* Pods_KT20_KT20UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KT20_KT20UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E6F040254B284F0098DA75 /* KT20.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KT20.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E6F043254B284F0098DA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E6F045254B284F0098DA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +70,11 @@
 		52E6F155254C53700098DA75 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		52E6F15A254C539E0098DA75 /* SpotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsViewController.swift; sourceTree = "<group>"; };
 		52E6F15F254C53A90098DA75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		73F60B71F75DECFFE473BC59 /* Pods-KT20.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20.release.xcconfig"; path = "Target Support Files/Pods-KT20/Pods-KT20.release.xcconfig"; sourceTree = "<group>"; };
+		81849929F4F06CC33919C959 /* Pods-KT20-KT20UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.debug.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8363B6625B568686B2CEA108 /* Pods-KT20Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.release.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D2C49CC01CA8FE5822856F63 /* Pods-KT20-KT20UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.release.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.release.xcconfig"; sourceTree = "<group>"; };
+		F74124268CA5EAC2282E8E1D /* Pods-KT20Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.debug.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424A1F924AA7B592403F799D /* Pods_KT20.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112852431580AC3759B487C4 /* Pods_KT20Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C0091A4C4B6859D8051BD7 /* Pods_KT20_KT20UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +112,8 @@
 				52E6F059254B28510098DA75 /* KT20Tests */,
 				52E6F064254B28510098DA75 /* KT20UITests */,
 				52E6F041254B284F0098DA75 /* Products */,
+				E66230B29612E1FEC64F1290 /* Pods */,
+				B98FA2EB4BA300912ED33ACD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +138,7 @@
 				52E6F049254B284F0098DA75 /* Main.storyboard */,
 				52E6F04C254B28510098DA75 /* Assets.xcassets */,
 				52E6F04E254B28510098DA75 /* LaunchScreen.storyboard */,
+				2A960570254C60EB00BDACAD /* GoogleService-Info.plist */,
 				52E6F051254B28510098DA75 /* Info.plist */,
 			);
 			path = KT20;
@@ -162,6 +182,29 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		B98FA2EB4BA300912ED33ACD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06448CDDAF9F69BB195DB787 /* Pods_KT20.framework */,
+				46110EEFC3FCA10627ABAE2B /* Pods_KT20_KT20UITests.framework */,
+				2A8122D7C0F7115FAFF28CD7 /* Pods_KT20Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E66230B29612E1FEC64F1290 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2396E98394FCBD7C3B12718E /* Pods-KT20.debug.xcconfig */,
+				73F60B71F75DECFFE473BC59 /* Pods-KT20.release.xcconfig */,
+				81849929F4F06CC33919C959 /* Pods-KT20-KT20UITests.debug.xcconfig */,
+				D2C49CC01CA8FE5822856F63 /* Pods-KT20-KT20UITests.release.xcconfig */,
+				F74124268CA5EAC2282E8E1D /* Pods-KT20Tests.debug.xcconfig */,
+				8363B6625B568686B2CEA108 /* Pods-KT20Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52E6F06A254B28510098DA75 /* Build configuration list for PBXNativeTarget "KT20" */;
 			buildPhases = (
+				25AC565C509B5821C3328641 /* [CP] Check Pods Manifest.lock */,
 				52E6F03C254B284F0098DA75 /* Sources */,
 				52E6F03D254B284F0098DA75 /* Frameworks */,
 				52E6F03E254B284F0098DA75 /* Resources */,
+				37FD822E35C831F5FF3A3011 /* [CP] Embed Pods Frameworks */,
+				8C48DF9D7FD7598ECD51031A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52E6F06D254B28510098DA75 /* Build configuration list for PBXNativeTarget "KT20Tests" */;
 			buildPhases = (
+				2EBF55F19D04CB9E54F93932 /* [CP] Check Pods Manifest.lock */,
 				52E6F052254B28510098DA75 /* Sources */,
 				52E6F053254B28510098DA75 /* Frameworks */,
 				52E6F054254B28510098DA75 /* Resources */,
@@ -204,9 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52E6F070254B28510098DA75 /* Build configuration list for PBXNativeTarget "KT20UITests" */;
 			buildPhases = (
+				FEE39E07BE6051FD3085F372 /* [CP] Check Pods Manifest.lock */,
 				52E6F05D254B28510098DA75 /* Sources */,
 				52E6F05E254B28510098DA75 /* Frameworks */,
 				52E6F05F254B28510098DA75 /* Resources */,
+				4A54CE741001AFBACBCCAFB5 /* [CP] Embed Pods Frameworks */,
+				2F2FA8D3BF9655F5DA050246 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E6F050254B28510098DA75 /* LaunchScreen.storyboard in Resources */,
+				2A960571254C60EB00BDACAD /* GoogleService-Info.plist in Resources */,
 				52E6F04D254B28510098DA75 /* Assets.xcassets in Resources */,
 				52E6F04B254B284F0098DA75 /* Main.storyboard in Resources */,
 			);
@@ -286,6 +337,143 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25AC565C509B5821C3328641 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KT20-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EBF55F19D04CB9E54F93932 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KT20Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F2FA8D3BF9655F5DA050246 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37FD822E35C831F5FF3A3011 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A54CE741001AFBACBCCAFB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C48DF9D7FD7598ECD51031A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEE39E07BE6051FD3085F372 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KT20-KT20UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52E6F03C254B284F0098DA75 /* Sources */ = {
@@ -473,12 +661,14 @@
 		};
 		52E6F06B254B28510098DA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2396E98394FCBD7C3B12718E /* Pods-KT20.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9ZP47VQX2;
 				INFOPLIST_FILE = KT20/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,12 +682,14 @@
 		};
 		52E6F06C254B28510098DA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73F60B71F75DECFFE473BC59 /* Pods-KT20.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9ZP47VQX2;
 				INFOPLIST_FILE = KT20/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,6 +703,7 @@
 		};
 		52E6F06E254B28510098DA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F74124268CA5EAC2282E8E1D /* Pods-KT20Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -533,6 +726,7 @@
 		};
 		52E6F06F254B28510098DA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8363B6625B568686B2CEA108 /* Pods-KT20Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -555,6 +749,7 @@
 		};
 		52E6F071254B28510098DA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81849929F4F06CC33919C959 /* Pods-KT20-KT20UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -575,6 +770,7 @@
 		};
 		52E6F072254B28510098DA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2C49CC01CA8FE5822856F63 /* Pods-KT20-KT20UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
