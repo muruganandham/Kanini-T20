@@ -19,15 +19,8 @@ class SplashViewController: UIViewController {
         // TODO: Splash animation here
         print("start...")
         
-        if(1==0) {
-            let tripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "TripViewController") as! TripViewController
-            self.navigationController?.pushViewController(tripVC, animated: animated)
-
-        } else {
-            let loginVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            loginVC.modalPresentationStyle = .custom
-            self.present(loginVC, animated: true, completion: nil)
-        }
+        let tripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "TripViewController") as! TripViewController
+        self.navigationController?.pushViewController(tripVC, animated: animated)
     }
     
     // MARK: - Add User defined methods

@@ -12,6 +12,10 @@ import GoogleSignIn
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
+    
+    var onLogIn: ((User?) -> Void)?
+    var onLogOut: (() -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +28,7 @@ class LoginViewController: UIViewController {
             do {
                 try firebaseAuth.signOut()
                 print("Sign Out")
+                self.onLogOut?()
                 self.updateButtonToLogin()
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
@@ -88,6 +93,7 @@ extension LoginViewController: GIDSignInDelegate {
                                     "email": user.email ?? "",
                                     "username": user.displayName ?? "",
                                     "createdOn": Date().timeIntervalSinceReferenceDate])
+                self.onLogIn?(user)
             }
         }
     }
