@@ -19,7 +19,7 @@ class SplashViewController: UIViewController {
         // TODO: Splash animation here
         print("start...")
         
-        if(1==1) {
+        if(1==0) {
             let tripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "TripViewController") as! TripViewController
             self.navigationController?.pushViewController(tripVC, animated: animated)
 
