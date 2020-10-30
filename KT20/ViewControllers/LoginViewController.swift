@@ -43,11 +43,11 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Methods
-    fileprivate func addUser(info: [String: Any]) {
+    fileprivate func addUser(userId: String, info: [String: Any]) {
         print(info)
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        ref.child("users").setValue(info)
+        ref.child("users").child(userId).setValue(info)
     }
     
     fileprivate func updateButtonToLogin() {
@@ -89,10 +89,10 @@ extension LoginViewController: GIDSignInDelegate {
             print("User is signed in...")
             self.updateButtonToLogOut()
             if let user = authResult?.user {
-                self.addUser(info: ["userId": user.uid,
-                                    "email": user.email ?? "",
-                                    "username": user.displayName ?? "",
-                                    "createdOn": Date().timeIntervalSinceReferenceDate])
+                let info: [String: Any] = ["email": user.email ?? "",
+                            "username": user.displayName ?? "",
+                            "createdOn": Date().timeIntervalSinceReferenceDate]
+                self.addUser(userId: user.uid, info: info)
                 self.onLogIn?(user)
             }
         }
