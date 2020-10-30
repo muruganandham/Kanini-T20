@@ -6,21 +6,29 @@
 //
 
 import UIKit
+import Lottie
 
 class SplashViewController: UIViewController {
     
+    @IBOutlet weak var animationView: AnimationView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        playAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        sleep(1)
-        // TODO: Splash animation here
-        print("start...")
-        
-        let tripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "TripViewController") as! TripViewController
-        self.navigationController?.pushViewController(tripVC, animated: animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    func playAnimation(){
+        animationView.animation = Animation.named("6843-map-location")
+        //animationView.loopMode = .loop
+        animationView.play { (finished) in
+            let tripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "TripViewController") as! TripViewController
+            self.navigationController?.pushViewController(tripVC, animated: true)
+        }
     }
     
     // MARK: - Add User defined methods
