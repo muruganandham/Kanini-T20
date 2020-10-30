@@ -3,221 +3,236 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		112852431580AC3759B487C4 /* Pods_KT20Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8122D7C0F7115FAFF28CD7 /* Pods_KT20Tests.framework */; };
-		2A960571254C60EB00BDACAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A960570254C60EB00BDACAD /* GoogleService-Info.plist */; };
-		424A1F924AA7B592403F799D /* Pods_KT20.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06448CDDAF9F69BB195DB787 /* Pods_KT20.framework */; };
-		52E6F044254B284F0098DA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F043254B284F0098DA75 /* AppDelegate.swift */; };
-		52E6F046254B284F0098DA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F045254B284F0098DA75 /* SceneDelegate.swift */; };
-		52E6F048254B284F0098DA75 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F047254B284F0098DA75 /* SplashViewController.swift */; };
-		52E6F04B254B284F0098DA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F049254B284F0098DA75 /* Main.storyboard */; };
-		52E6F04D254B28510098DA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F04C254B28510098DA75 /* Assets.xcassets */; };
-		52E6F050254B28510098DA75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F04E254B28510098DA75 /* LaunchScreen.storyboard */; };
-		52E6F05B254B28510098DA75 /* KT20Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F05A254B28510098DA75 /* KT20Tests.swift */; };
-		52E6F066254B28510098DA75 /* KT20UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F065254B28510098DA75 /* KT20UITests.swift */; };
-		52E6F13F254C52610098DA75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F13E254C52610098DA75 /* Constants.swift */; };
-		52E6F144254C52700098DA75 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F143254C52700098DA75 /* ViewManager.swift */; };
-		52E6F149254C52940098DA75 /* UIExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F148254C52940098DA75 /* UIExtras.swift */; };
-		52E6F156254C53700098DA75 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F155254C53700098DA75 /* TripViewController.swift */; };
-		52E6F15B254C539E0098DA75 /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F15A254C539E0098DA75 /* SpotsViewController.swift */; };
-		52E6F160254C53A90098DA75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F15F254C53A90098DA75 /* LoginViewController.swift */; };
-		B2C0091A4C4B6859D8051BD7 /* Pods_KT20_KT20UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46110EEFC3FCA10627ABAE2B /* Pods_KT20_KT20UITests.framework */; };
+		06A0F395A3C2DE4339155EAA /* Pods_KT20_KT20UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4FCAC1A89D1B4D5B358FD7 /* Pods_KT20_KT20UITests.framework */; };
+		52E6F1AE254C7F6D0098DA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1AD254C7F6D0098DA75 /* AppDelegate.swift */; };
+		52E6F1B0254C7F6D0098DA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1AF254C7F6D0098DA75 /* SceneDelegate.swift */; };
+		52E6F1B5254C7F6D0098DA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F1B3254C7F6D0098DA75 /* Main.storyboard */; };
+		52E6F1B7254C7F6E0098DA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F1B6254C7F6E0098DA75 /* Assets.xcassets */; };
+		52E6F1BA254C7F6E0098DA75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F1B8254C7F6E0098DA75 /* LaunchScreen.storyboard */; };
+		52E6F1C5254C7F6F0098DA75 /* KT20Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1C4254C7F6F0098DA75 /* KT20Tests.swift */; };
+		52E6F1D0254C7F6F0098DA75 /* KT20UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1CF254C7F6F0098DA75 /* KT20UITests.swift */; };
+		52E6F1EE254C7FCA0098DA75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1E4254C7FCA0098DA75 /* Constants.swift */; };
+		52E6F1EF254C7FCA0098DA75 /* UIExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1E5254C7FCA0098DA75 /* UIExtras.swift */; };
+		52E6F1F0254C7FCA0098DA75 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1E6254C7FCA0098DA75 /* ViewManager.swift */; };
+		52E6F1F1254C7FCA0098DA75 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1E7254C7FCA0098DA75 /* LocationManager.swift */; };
+		52E6F1F2254C7FCA0098DA75 /* travel.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F1E9254C7FCA0098DA75 /* travel.gpx */; };
+		52E6F1F3254C7FCA0098DA75 /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1EB254C7FCA0098DA75 /* SpotsViewController.swift */; };
+		52E6F1F4254C7FCA0098DA75 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1EC254C7FCA0098DA75 /* TripViewController.swift */; };
+		52E6F1F5254C7FCA0098DA75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1ED254C7FCA0098DA75 /* LoginViewController.swift */; };
+		52E6F1FA254C7FD10098DA75 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1F9254C7FD10098DA75 /* SplashViewController.swift */; };
+		52E6F1FF254C7FDA0098DA75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F1FE254C7FDA0098DA75 /* GoogleService-Info.plist */; };
+		5596E5CCFD467D8A27336574 /* Pods_KT20Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB45ADAA30FCBE1B31D64714 /* Pods_KT20Tests.framework */; };
+		87C4509D3225DA4AAE823DC2 /* Pods_KT20.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC6BAEEE8A1C2808399EED /* Pods_KT20.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		52E6F057254B28510098DA75 /* PBXContainerItemProxy */ = {
+		52E6F1C1254C7F6F0098DA75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 52E6F038254B284F0098DA75 /* Project object */;
+			containerPortal = 52E6F1A2254C7F6D0098DA75 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 52E6F03F254B284F0098DA75;
+			remoteGlobalIDString = 52E6F1A9254C7F6D0098DA75;
 			remoteInfo = KT20;
 		};
-		52E6F062254B28510098DA75 /* PBXContainerItemProxy */ = {
+		52E6F1CC254C7F6F0098DA75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 52E6F038254B284F0098DA75 /* Project object */;
+			containerPortal = 52E6F1A2254C7F6D0098DA75 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 52E6F03F254B284F0098DA75;
+			remoteGlobalIDString = 52E6F1A9254C7F6D0098DA75;
 			remoteInfo = KT20;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06448CDDAF9F69BB195DB787 /* Pods_KT20.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KT20.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2396E98394FCBD7C3B12718E /* Pods-KT20.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20.debug.xcconfig"; path = "Target Support Files/Pods-KT20/Pods-KT20.debug.xcconfig"; sourceTree = "<group>"; };
-		2A8122D7C0F7115FAFF28CD7 /* Pods_KT20Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KT20Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A960570254C60EB00BDACAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		46110EEFC3FCA10627ABAE2B /* Pods_KT20_KT20UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KT20_KT20UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52E6F040254B284F0098DA75 /* KT20.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KT20.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		52E6F043254B284F0098DA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52E6F045254B284F0098DA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52E6F047254B284F0098DA75 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		52E6F04A254B284F0098DA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		52E6F04C254B28510098DA75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52E6F04F254B28510098DA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		52E6F051254B28510098DA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52E6F056254B28510098DA75 /* KT20Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KT20Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52E6F05A254B28510098DA75 /* KT20Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KT20Tests.swift; sourceTree = "<group>"; };
-		52E6F05C254B28510098DA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52E6F061254B28510098DA75 /* KT20UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KT20UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52E6F065254B28510098DA75 /* KT20UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KT20UITests.swift; sourceTree = "<group>"; };
-		52E6F067254B28510098DA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52E6F13E254C52610098DA75 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		52E6F143254C52700098DA75 /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
-		52E6F148254C52940098DA75 /* UIExtras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtras.swift; sourceTree = "<group>"; };
-		52E6F155254C53700098DA75 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
-		52E6F15A254C539E0098DA75 /* SpotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsViewController.swift; sourceTree = "<group>"; };
-		52E6F15F254C53A90098DA75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		73F60B71F75DECFFE473BC59 /* Pods-KT20.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20.release.xcconfig"; path = "Target Support Files/Pods-KT20/Pods-KT20.release.xcconfig"; sourceTree = "<group>"; };
-		81849929F4F06CC33919C959 /* Pods-KT20-KT20UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.debug.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8363B6625B568686B2CEA108 /* Pods-KT20Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.release.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D2C49CC01CA8FE5822856F63 /* Pods-KT20-KT20UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.release.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.release.xcconfig"; sourceTree = "<group>"; };
-		F74124268CA5EAC2282E8E1D /* Pods-KT20Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.debug.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		455EAEEFC5AE853BD74ABAEE /* Pods-KT20-KT20UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.release.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.release.xcconfig"; sourceTree = "<group>"; };
+		4912C920B590CDA8E2CC2278 /* Pods-KT20Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.debug.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		52E6F1AA254C7F6D0098DA75 /* KT20.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KT20.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E6F1AD254C7F6D0098DA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52E6F1AF254C7F6D0098DA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		52E6F1B4254C7F6D0098DA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52E6F1B6254C7F6E0098DA75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52E6F1B9254C7F6E0098DA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52E6F1BB254C7F6E0098DA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E6F1C0254C7F6F0098DA75 /* KT20Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KT20Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E6F1C4254C7F6F0098DA75 /* KT20Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KT20Tests.swift; sourceTree = "<group>"; };
+		52E6F1C6254C7F6F0098DA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E6F1CB254C7F6F0098DA75 /* KT20UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KT20UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E6F1CF254C7F6F0098DA75 /* KT20UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KT20UITests.swift; sourceTree = "<group>"; };
+		52E6F1D1254C7F6F0098DA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E6F1E4254C7FCA0098DA75 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		52E6F1E5254C7FCA0098DA75 /* UIExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtras.swift; sourceTree = "<group>"; };
+		52E6F1E6254C7FCA0098DA75 /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
+		52E6F1E7254C7FCA0098DA75 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		52E6F1E9254C7FCA0098DA75 /* travel.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = travel.gpx; sourceTree = "<group>"; };
+		52E6F1EB254C7FCA0098DA75 /* SpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsViewController.swift; sourceTree = "<group>"; };
+		52E6F1EC254C7FCA0098DA75 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		52E6F1ED254C7FCA0098DA75 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		52E6F1F9254C7FD10098DA75 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		52E6F1FE254C7FDA0098DA75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7313749CDD0C4348D64183D6 /* Pods-KT20-KT20UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.debug.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7F0381E28975F884137ABCE4 /* Pods-KT20.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20.debug.xcconfig"; path = "Target Support Files/Pods-KT20/Pods-KT20.debug.xcconfig"; sourceTree = "<group>"; };
+		9EF3BE8A35B9DEAAE0BD5DE0 /* Pods-KT20Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.release.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.release.xcconfig"; sourceTree = "<group>"; };
+		CF4FCAC1A89D1B4D5B358FD7 /* Pods_KT20_KT20UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KT20_KT20UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB45ADAA30FCBE1B31D64714 /* Pods_KT20Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KT20Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E311F2B9C1C56245FD73E48A /* Pods-KT20.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20.release.xcconfig"; path = "Target Support Files/Pods-KT20/Pods-KT20.release.xcconfig"; sourceTree = "<group>"; };
+		FAFC6BAEEE8A1C2808399EED /* Pods_KT20.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KT20.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		52E6F03D254B284F0098DA75 /* Frameworks */ = {
+		52E6F1A7254C7F6D0098DA75 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				424A1F924AA7B592403F799D /* Pods_KT20.framework in Frameworks */,
+				87C4509D3225DA4AAE823DC2 /* Pods_KT20.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52E6F053254B28510098DA75 /* Frameworks */ = {
+		52E6F1BD254C7F6F0098DA75 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				112852431580AC3759B487C4 /* Pods_KT20Tests.framework in Frameworks */,
+				5596E5CCFD467D8A27336574 /* Pods_KT20Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52E6F05E254B28510098DA75 /* Frameworks */ = {
+		52E6F1C8254C7F6F0098DA75 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2C0091A4C4B6859D8051BD7 /* Pods_KT20_KT20UITests.framework in Frameworks */,
+				06A0F395A3C2DE4339155EAA /* Pods_KT20_KT20UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52E6F037254B284F0098DA75 = {
+		52E6F1A1254C7F6D0098DA75 = {
 			isa = PBXGroup;
 			children = (
-				52E6F042254B284F0098DA75 /* KT20 */,
-				52E6F059254B28510098DA75 /* KT20Tests */,
-				52E6F064254B28510098DA75 /* KT20UITests */,
-				52E6F041254B284F0098DA75 /* Products */,
-				E66230B29612E1FEC64F1290 /* Pods */,
-				B98FA2EB4BA300912ED33ACD /* Frameworks */,
+				52E6F1AC254C7F6D0098DA75 /* KT20 */,
+				52E6F1C3254C7F6F0098DA75 /* KT20Tests */,
+				52E6F1CE254C7F6F0098DA75 /* KT20UITests */,
+				52E6F1AB254C7F6D0098DA75 /* Products */,
+				9060BEB44AA2AD6C12C95161 /* Pods */,
+				B6498F61EADD8F91FD90C2E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		52E6F041254B284F0098DA75 /* Products */ = {
+		52E6F1AB254C7F6D0098DA75 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52E6F040254B284F0098DA75 /* KT20.app */,
-				52E6F056254B28510098DA75 /* KT20Tests.xctest */,
-				52E6F061254B28510098DA75 /* KT20UITests.xctest */,
+				52E6F1AA254C7F6D0098DA75 /* KT20.app */,
+				52E6F1C0254C7F6F0098DA75 /* KT20Tests.xctest */,
+				52E6F1CB254C7F6F0098DA75 /* KT20UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		52E6F042254B284F0098DA75 /* KT20 */ = {
+		52E6F1AC254C7F6D0098DA75 /* KT20 */ = {
 			isa = PBXGroup;
 			children = (
-				52E6F043254B284F0098DA75 /* AppDelegate.swift */,
-				52E6F045254B284F0098DA75 /* SceneDelegate.swift */,
-				52E6F047254B284F0098DA75 /* SplashViewController.swift */,
-				52E6F13A254C51DC0098DA75 /* Utilities */,
-				52E6F139254C51C00098DA75 /* ViewControllers */,
-				52E6F049254B284F0098DA75 /* Main.storyboard */,
-				52E6F04C254B28510098DA75 /* Assets.xcassets */,
-				52E6F04E254B28510098DA75 /* LaunchScreen.storyboard */,
-				2A960570254C60EB00BDACAD /* GoogleService-Info.plist */,
-				52E6F051254B28510098DA75 /* Info.plist */,
+				52E6F1E8254C7FCA0098DA75 /* TestData */,
+				52E6F1E3254C7FCA0098DA75 /* Utilities */,
+				52E6F1EA254C7FCA0098DA75 /* ViewControllers */,
+				52E6F1AD254C7F6D0098DA75 /* AppDelegate.swift */,
+				52E6F1AF254C7F6D0098DA75 /* SceneDelegate.swift */,
+				52E6F1F9254C7FD10098DA75 /* SplashViewController.swift */,
+				52E6F1B3254C7F6D0098DA75 /* Main.storyboard */,
+				52E6F1FE254C7FDA0098DA75 /* GoogleService-Info.plist */,
+				52E6F1B6254C7F6E0098DA75 /* Assets.xcassets */,
+				52E6F1B8254C7F6E0098DA75 /* LaunchScreen.storyboard */,
+				52E6F1BB254C7F6E0098DA75 /* Info.plist */,
 			);
 			path = KT20;
 			sourceTree = "<group>";
 		};
-		52E6F059254B28510098DA75 /* KT20Tests */ = {
+		52E6F1C3254C7F6F0098DA75 /* KT20Tests */ = {
 			isa = PBXGroup;
 			children = (
-				52E6F05A254B28510098DA75 /* KT20Tests.swift */,
-				52E6F05C254B28510098DA75 /* Info.plist */,
+				52E6F1C4254C7F6F0098DA75 /* KT20Tests.swift */,
+				52E6F1C6254C7F6F0098DA75 /* Info.plist */,
 			);
 			path = KT20Tests;
 			sourceTree = "<group>";
 		};
-		52E6F064254B28510098DA75 /* KT20UITests */ = {
+		52E6F1CE254C7F6F0098DA75 /* KT20UITests */ = {
 			isa = PBXGroup;
 			children = (
-				52E6F065254B28510098DA75 /* KT20UITests.swift */,
-				52E6F067254B28510098DA75 /* Info.plist */,
+				52E6F1CF254C7F6F0098DA75 /* KT20UITests.swift */,
+				52E6F1D1254C7F6F0098DA75 /* Info.plist */,
 			);
 			path = KT20UITests;
 			sourceTree = "<group>";
 		};
-		52E6F139254C51C00098DA75 /* ViewControllers */ = {
+		52E6F1E3254C7FCA0098DA75 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				52E6F155254C53700098DA75 /* TripViewController.swift */,
-				52E6F15A254C539E0098DA75 /* SpotsViewController.swift */,
-				52E6F15F254C53A90098DA75 /* LoginViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		52E6F13A254C51DC0098DA75 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				52E6F13E254C52610098DA75 /* Constants.swift */,
-				52E6F143254C52700098DA75 /* ViewManager.swift */,
-				52E6F148254C52940098DA75 /* UIExtras.swift */,
+				52E6F1E4254C7FCA0098DA75 /* Constants.swift */,
+				52E6F1E5254C7FCA0098DA75 /* UIExtras.swift */,
+				52E6F1E6254C7FCA0098DA75 /* ViewManager.swift */,
+				52E6F1E7254C7FCA0098DA75 /* LocationManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		B98FA2EB4BA300912ED33ACD /* Frameworks */ = {
+		52E6F1E8254C7FCA0098DA75 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
-				06448CDDAF9F69BB195DB787 /* Pods_KT20.framework */,
-				46110EEFC3FCA10627ABAE2B /* Pods_KT20_KT20UITests.framework */,
-				2A8122D7C0F7115FAFF28CD7 /* Pods_KT20Tests.framework */,
+				52E6F1E9254C7FCA0098DA75 /* travel.gpx */,
 			);
-			name = Frameworks;
+			path = TestData;
 			sourceTree = "<group>";
 		};
-		E66230B29612E1FEC64F1290 /* Pods */ = {
+		52E6F1EA254C7FCA0098DA75 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2396E98394FCBD7C3B12718E /* Pods-KT20.debug.xcconfig */,
-				73F60B71F75DECFFE473BC59 /* Pods-KT20.release.xcconfig */,
-				81849929F4F06CC33919C959 /* Pods-KT20-KT20UITests.debug.xcconfig */,
-				D2C49CC01CA8FE5822856F63 /* Pods-KT20-KT20UITests.release.xcconfig */,
-				F74124268CA5EAC2282E8E1D /* Pods-KT20Tests.debug.xcconfig */,
-				8363B6625B568686B2CEA108 /* Pods-KT20Tests.release.xcconfig */,
+				52E6F1EB254C7FCA0098DA75 /* SpotsViewController.swift */,
+				52E6F1EC254C7FCA0098DA75 /* TripViewController.swift */,
+				52E6F1ED254C7FCA0098DA75 /* LoginViewController.swift */,
 			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9060BEB44AA2AD6C12C95161 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F0381E28975F884137ABCE4 /* Pods-KT20.debug.xcconfig */,
+				E311F2B9C1C56245FD73E48A /* Pods-KT20.release.xcconfig */,
+				7313749CDD0C4348D64183D6 /* Pods-KT20-KT20UITests.debug.xcconfig */,
+				455EAEEFC5AE853BD74ABAEE /* Pods-KT20-KT20UITests.release.xcconfig */,
+				4912C920B590CDA8E2CC2278 /* Pods-KT20Tests.debug.xcconfig */,
+				9EF3BE8A35B9DEAAE0BD5DE0 /* Pods-KT20Tests.release.xcconfig */,
+			);
+			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B6498F61EADD8F91FD90C2E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAFC6BAEEE8A1C2808399EED /* Pods_KT20.framework */,
+				CF4FCAC1A89D1B4D5B358FD7 /* Pods_KT20_KT20UITests.framework */,
+				DB45ADAA30FCBE1B31D64714 /* Pods_KT20Tests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		52E6F03F254B284F0098DA75 /* KT20 */ = {
+		52E6F1A9254C7F6D0098DA75 /* KT20 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52E6F06A254B28510098DA75 /* Build configuration list for PBXNativeTarget "KT20" */;
+			buildConfigurationList = 52E6F1D4254C7F6F0098DA75 /* Build configuration list for PBXNativeTarget "KT20" */;
 			buildPhases = (
-				25AC565C509B5821C3328641 /* [CP] Check Pods Manifest.lock */,
-				52E6F03C254B284F0098DA75 /* Sources */,
-				52E6F03D254B284F0098DA75 /* Frameworks */,
-				52E6F03E254B284F0098DA75 /* Resources */,
-				37FD822E35C831F5FF3A3011 /* [CP] Embed Pods Frameworks */,
-				8C48DF9D7FD7598ECD51031A /* [CP] Copy Pods Resources */,
+				3F5A6B897D5456385AD9C02E /* [CP] Check Pods Manifest.lock */,
+				52E6F1A6254C7F6D0098DA75 /* Sources */,
+				52E6F1A7254C7F6D0098DA75 /* Frameworks */,
+				52E6F1A8254C7F6D0098DA75 /* Resources */,
+				EA4656B156B9474AE1CDC51E /* [CP] Embed Pods Frameworks */,
+				9830D21F9253B777F9F63085 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,72 +240,72 @@
 			);
 			name = KT20;
 			productName = KT20;
-			productReference = 52E6F040254B284F0098DA75 /* KT20.app */;
+			productReference = 52E6F1AA254C7F6D0098DA75 /* KT20.app */;
 			productType = "com.apple.product-type.application";
 		};
-		52E6F055254B28510098DA75 /* KT20Tests */ = {
+		52E6F1BF254C7F6F0098DA75 /* KT20Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52E6F06D254B28510098DA75 /* Build configuration list for PBXNativeTarget "KT20Tests" */;
+			buildConfigurationList = 52E6F1D7254C7F6F0098DA75 /* Build configuration list for PBXNativeTarget "KT20Tests" */;
 			buildPhases = (
-				2EBF55F19D04CB9E54F93932 /* [CP] Check Pods Manifest.lock */,
-				52E6F052254B28510098DA75 /* Sources */,
-				52E6F053254B28510098DA75 /* Frameworks */,
-				52E6F054254B28510098DA75 /* Resources */,
+				DAD6D204925967F793F5942C /* [CP] Check Pods Manifest.lock */,
+				52E6F1BC254C7F6F0098DA75 /* Sources */,
+				52E6F1BD254C7F6F0098DA75 /* Frameworks */,
+				52E6F1BE254C7F6F0098DA75 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				52E6F058254B28510098DA75 /* PBXTargetDependency */,
+				52E6F1C2254C7F6F0098DA75 /* PBXTargetDependency */,
 			);
 			name = KT20Tests;
 			productName = KT20Tests;
-			productReference = 52E6F056254B28510098DA75 /* KT20Tests.xctest */;
+			productReference = 52E6F1C0254C7F6F0098DA75 /* KT20Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		52E6F060254B28510098DA75 /* KT20UITests */ = {
+		52E6F1CA254C7F6F0098DA75 /* KT20UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52E6F070254B28510098DA75 /* Build configuration list for PBXNativeTarget "KT20UITests" */;
+			buildConfigurationList = 52E6F1DA254C7F6F0098DA75 /* Build configuration list for PBXNativeTarget "KT20UITests" */;
 			buildPhases = (
-				FEE39E07BE6051FD3085F372 /* [CP] Check Pods Manifest.lock */,
-				52E6F05D254B28510098DA75 /* Sources */,
-				52E6F05E254B28510098DA75 /* Frameworks */,
-				52E6F05F254B28510098DA75 /* Resources */,
-				4A54CE741001AFBACBCCAFB5 /* [CP] Embed Pods Frameworks */,
-				2F2FA8D3BF9655F5DA050246 /* [CP] Copy Pods Resources */,
+				ABFC659511AEB2EE0A456AE4 /* [CP] Check Pods Manifest.lock */,
+				52E6F1C7254C7F6F0098DA75 /* Sources */,
+				52E6F1C8254C7F6F0098DA75 /* Frameworks */,
+				52E6F1C9254C7F6F0098DA75 /* Resources */,
+				4398BF86B7CEB71A88BEF7B5 /* [CP] Embed Pods Frameworks */,
+				204ED16F50FA89154919E010 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				52E6F063254B28510098DA75 /* PBXTargetDependency */,
+				52E6F1CD254C7F6F0098DA75 /* PBXTargetDependency */,
 			);
 			name = KT20UITests;
 			productName = KT20UITests;
-			productReference = 52E6F061254B28510098DA75 /* KT20UITests.xctest */;
+			productReference = 52E6F1CB254C7F6F0098DA75 /* KT20UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		52E6F038254B284F0098DA75 /* Project object */ = {
+		52E6F1A2254C7F6D0098DA75 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					52E6F03F254B284F0098DA75 = {
+					52E6F1A9254C7F6D0098DA75 = {
 						CreatedOnToolsVersion = 12.0;
 					};
-					52E6F055254B28510098DA75 = {
+					52E6F1BF254C7F6F0098DA75 = {
 						CreatedOnToolsVersion = 12.0;
-						TestTargetID = 52E6F03F254B284F0098DA75;
+						TestTargetID = 52E6F1A9254C7F6D0098DA75;
 					};
-					52E6F060254B28510098DA75 = {
+					52E6F1CA254C7F6F0098DA75 = {
 						CreatedOnToolsVersion = 12.0;
-						TestTargetID = 52E6F03F254B284F0098DA75;
+						TestTargetID = 52E6F1A9254C7F6D0098DA75;
 					};
 				};
 			};
-			buildConfigurationList = 52E6F03B254B284F0098DA75 /* Build configuration list for PBXProject "KT20" */;
+			buildConfigurationList = 52E6F1A5254C7F6D0098DA75 /* Build configuration list for PBXProject "KT20" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -298,38 +313,39 @@
 				en,
 				Base,
 			);
-			mainGroup = 52E6F037254B284F0098DA75;
-			productRefGroup = 52E6F041254B284F0098DA75 /* Products */;
+			mainGroup = 52E6F1A1254C7F6D0098DA75;
+			productRefGroup = 52E6F1AB254C7F6D0098DA75 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				52E6F03F254B284F0098DA75 /* KT20 */,
-				52E6F055254B28510098DA75 /* KT20Tests */,
-				52E6F060254B28510098DA75 /* KT20UITests */,
+				52E6F1A9254C7F6D0098DA75 /* KT20 */,
+				52E6F1BF254C7F6F0098DA75 /* KT20Tests */,
+				52E6F1CA254C7F6F0098DA75 /* KT20UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		52E6F03E254B284F0098DA75 /* Resources */ = {
+		52E6F1A8254C7F6D0098DA75 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52E6F050254B28510098DA75 /* LaunchScreen.storyboard in Resources */,
-				2A960571254C60EB00BDACAD /* GoogleService-Info.plist in Resources */,
-				52E6F04D254B28510098DA75 /* Assets.xcassets in Resources */,
-				52E6F04B254B284F0098DA75 /* Main.storyboard in Resources */,
+				52E6F1BA254C7F6E0098DA75 /* LaunchScreen.storyboard in Resources */,
+				52E6F1F2254C7FCA0098DA75 /* travel.gpx in Resources */,
+				52E6F1FF254C7FDA0098DA75 /* GoogleService-Info.plist in Resources */,
+				52E6F1B7254C7F6E0098DA75 /* Assets.xcassets in Resources */,
+				52E6F1B5254C7F6D0098DA75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52E6F054254B28510098DA75 /* Resources */ = {
+		52E6F1BE254C7F6F0098DA75 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52E6F05F254B28510098DA75 /* Resources */ = {
+		52E6F1C9254C7F6F0098DA75 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -339,7 +355,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25AC565C509B5821C3328641 /* [CP] Check Pods Manifest.lock */ = {
+		204ED16F50FA89154919E010 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F5A6B897D5456385AD9C02E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,63 +394,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2EBF55F19D04CB9E54F93932 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KT20Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2F2FA8D3BF9655F5DA050246 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		37FD822E35C831F5FF3A3011 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A54CE741001AFBACBCCAFB5 /* [CP] Embed Pods Frameworks */ = {
+		4398BF86B7CEB71A88BEF7B5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -434,7 +411,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8C48DF9D7FD7598ECD51031A /* [CP] Copy Pods Resources */ = {
+		9830D21F9253B777F9F63085 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -451,7 +428,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FEE39E07BE6051FD3085F372 /* [CP] Check Pods Manifest.lock */ = {
+		ABFC659511AEB2EE0A456AE4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -473,69 +450,109 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DAD6D204925967F793F5942C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KT20Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA4656B156B9474AE1CDC51E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KT20/Pods-KT20-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		52E6F03C254B284F0098DA75 /* Sources */ = {
+		52E6F1A6254C7F6D0098DA75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52E6F160254C53A90098DA75 /* LoginViewController.swift in Sources */,
-				52E6F048254B284F0098DA75 /* SplashViewController.swift in Sources */,
-				52E6F044254B284F0098DA75 /* AppDelegate.swift in Sources */,
-				52E6F156254C53700098DA75 /* TripViewController.swift in Sources */,
-				52E6F149254C52940098DA75 /* UIExtras.swift in Sources */,
-				52E6F15B254C539E0098DA75 /* SpotsViewController.swift in Sources */,
-				52E6F144254C52700098DA75 /* ViewManager.swift in Sources */,
-				52E6F046254B284F0098DA75 /* SceneDelegate.swift in Sources */,
-				52E6F13F254C52610098DA75 /* Constants.swift in Sources */,
+				52E6F1F5254C7FCA0098DA75 /* LoginViewController.swift in Sources */,
+				52E6F1F3254C7FCA0098DA75 /* SpotsViewController.swift in Sources */,
+				52E6F1F4254C7FCA0098DA75 /* TripViewController.swift in Sources */,
+				52E6F1AE254C7F6D0098DA75 /* AppDelegate.swift in Sources */,
+				52E6F1B0254C7F6D0098DA75 /* SceneDelegate.swift in Sources */,
+				52E6F1F1254C7FCA0098DA75 /* LocationManager.swift in Sources */,
+				52E6F1F0254C7FCA0098DA75 /* ViewManager.swift in Sources */,
+				52E6F1EF254C7FCA0098DA75 /* UIExtras.swift in Sources */,
+				52E6F1EE254C7FCA0098DA75 /* Constants.swift in Sources */,
+				52E6F1FA254C7FD10098DA75 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52E6F052254B28510098DA75 /* Sources */ = {
+		52E6F1BC254C7F6F0098DA75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52E6F05B254B28510098DA75 /* KT20Tests.swift in Sources */,
+				52E6F1C5254C7F6F0098DA75 /* KT20Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52E6F05D254B28510098DA75 /* Sources */ = {
+		52E6F1C7254C7F6F0098DA75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52E6F066254B28510098DA75 /* KT20UITests.swift in Sources */,
+				52E6F1D0254C7F6F0098DA75 /* KT20UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		52E6F058254B28510098DA75 /* PBXTargetDependency */ = {
+		52E6F1C2254C7F6F0098DA75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 52E6F03F254B284F0098DA75 /* KT20 */;
-			targetProxy = 52E6F057254B28510098DA75 /* PBXContainerItemProxy */;
+			target = 52E6F1A9254C7F6D0098DA75 /* KT20 */;
+			targetProxy = 52E6F1C1254C7F6F0098DA75 /* PBXContainerItemProxy */;
 		};
-		52E6F063254B28510098DA75 /* PBXTargetDependency */ = {
+		52E6F1CD254C7F6F0098DA75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 52E6F03F254B284F0098DA75 /* KT20 */;
-			targetProxy = 52E6F062254B28510098DA75 /* PBXContainerItemProxy */;
+			target = 52E6F1A9254C7F6D0098DA75 /* KT20 */;
+			targetProxy = 52E6F1CC254C7F6F0098DA75 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		52E6F049254B284F0098DA75 /* Main.storyboard */ = {
+		52E6F1B3254C7F6D0098DA75 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				52E6F04A254B284F0098DA75 /* Base */,
+				52E6F1B4254C7F6D0098DA75 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		52E6F04E254B28510098DA75 /* LaunchScreen.storyboard */ = {
+		52E6F1B8254C7F6E0098DA75 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				52E6F04F254B28510098DA75 /* Base */,
+				52E6F1B9254C7F6E0098DA75 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -543,7 +560,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		52E6F068254B28510098DA75 /* Debug */ = {
+		52E6F1D2254C7F6F0098DA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -604,7 +621,7 @@
 			};
 			name = Debug;
 		};
-		52E6F069254B28510098DA75 /* Release */ = {
+		52E6F1D3254C7F6F0098DA75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -659,16 +676,15 @@
 			};
 			name = Release;
 		};
-		52E6F06B254B28510098DA75 /* Debug */ = {
+		52E6F1D5254C7F6F0098DA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2396E98394FCBD7C3B12718E /* Pods-KT20.debug.xcconfig */;
+			baseConfigurationReference = 7F0381E28975F884137ABCE4 /* Pods-KT20.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9ZP47VQX2;
 				INFOPLIST_FILE = KT20/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -680,16 +696,15 @@
 			};
 			name = Debug;
 		};
-		52E6F06C254B28510098DA75 /* Release */ = {
+		52E6F1D6254C7F6F0098DA75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73F60B71F75DECFFE473BC59 /* Pods-KT20.release.xcconfig */;
+			baseConfigurationReference = E311F2B9C1C56245FD73E48A /* Pods-KT20.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9ZP47VQX2;
 				INFOPLIST_FILE = KT20/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -701,9 +716,9 @@
 			};
 			name = Release;
 		};
-		52E6F06E254B28510098DA75 /* Debug */ = {
+		52E6F1D8254C7F6F0098DA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F74124268CA5EAC2282E8E1D /* Pods-KT20Tests.debug.xcconfig */;
+			baseConfigurationReference = 4912C920B590CDA8E2CC2278 /* Pods-KT20Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -724,9 +739,9 @@
 			};
 			name = Debug;
 		};
-		52E6F06F254B28510098DA75 /* Release */ = {
+		52E6F1D9254C7F6F0098DA75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8363B6625B568686B2CEA108 /* Pods-KT20Tests.release.xcconfig */;
+			baseConfigurationReference = 9EF3BE8A35B9DEAAE0BD5DE0 /* Pods-KT20Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -747,9 +762,9 @@
 			};
 			name = Release;
 		};
-		52E6F071254B28510098DA75 /* Debug */ = {
+		52E6F1DB254C7F6F0098DA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81849929F4F06CC33919C959 /* Pods-KT20-KT20UITests.debug.xcconfig */;
+			baseConfigurationReference = 7313749CDD0C4348D64183D6 /* Pods-KT20-KT20UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -768,9 +783,9 @@
 			};
 			name = Debug;
 		};
-		52E6F072254B28510098DA75 /* Release */ = {
+		52E6F1DC254C7F6F0098DA75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2C49CC01CA8FE5822856F63 /* Pods-KT20-KT20UITests.release.xcconfig */;
+			baseConfigurationReference = 455EAEEFC5AE853BD74ABAEE /* Pods-KT20-KT20UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -792,43 +807,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		52E6F03B254B284F0098DA75 /* Build configuration list for PBXProject "KT20" */ = {
+		52E6F1A5254C7F6D0098DA75 /* Build configuration list for PBXProject "KT20" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52E6F068254B28510098DA75 /* Debug */,
-				52E6F069254B28510098DA75 /* Release */,
+				52E6F1D2254C7F6F0098DA75 /* Debug */,
+				52E6F1D3254C7F6F0098DA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52E6F06A254B28510098DA75 /* Build configuration list for PBXNativeTarget "KT20" */ = {
+		52E6F1D4254C7F6F0098DA75 /* Build configuration list for PBXNativeTarget "KT20" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52E6F06B254B28510098DA75 /* Debug */,
-				52E6F06C254B28510098DA75 /* Release */,
+				52E6F1D5254C7F6F0098DA75 /* Debug */,
+				52E6F1D6254C7F6F0098DA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52E6F06D254B28510098DA75 /* Build configuration list for PBXNativeTarget "KT20Tests" */ = {
+		52E6F1D7254C7F6F0098DA75 /* Build configuration list for PBXNativeTarget "KT20Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52E6F06E254B28510098DA75 /* Debug */,
-				52E6F06F254B28510098DA75 /* Release */,
+				52E6F1D8254C7F6F0098DA75 /* Debug */,
+				52E6F1D9254C7F6F0098DA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52E6F070254B28510098DA75 /* Build configuration list for PBXNativeTarget "KT20UITests" */ = {
+		52E6F1DA254C7F6F0098DA75 /* Build configuration list for PBXNativeTarget "KT20UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52E6F071254B28510098DA75 /* Debug */,
-				52E6F072254B28510098DA75 /* Release */,
+				52E6F1DB254C7F6F0098DA75 /* Debug */,
+				52E6F1DC254C7F6F0098DA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 52E6F038254B284F0098DA75 /* Project object */;
+	rootObject = 52E6F1A2254C7F6D0098DA75 /* Project object */;
 }

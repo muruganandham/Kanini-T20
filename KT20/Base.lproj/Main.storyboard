@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9oU-9A-6dU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="KT20" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="BYZ-38-t0r" customClass="SplashViewController" customModule="KT20" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1a-UV-kug">
-                                <rect key="frame" x="126" y="430" width="162" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1a-UV-kug">
+                                <rect key="frame" x="125.5" y="430" width="163" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Log In with Google"/>
                                 <connections>
@@ -24,20 +25,126 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="G1a-UV-kug" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FzU-3q-CKo"/>
                             <constraint firstItem="G1a-UV-kug" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UBN-ze-IRy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="loginButton" destination="G1a-UV-kug" id="O7o-Eg-eXJ"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="ymQ-kE-iR7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="78"/>
+            <point key="canvasLocation" x="854" y="55"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="3hB-fY-Kpq">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="OKS-xh-jIE" customClass="LoginViewController" customModule="KT20" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MUb-qV-qdT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2b-M9-uxU">
+                                <rect key="frame" x="145" y="433" width="124" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JOu-3d-6SR"/>
+                                </constraints>
+                                <state key="normal" title="Login with Google"/>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="OKS-xh-jIE" eventType="touchUpInside" id="cgp-KH-A0i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mei-JG-EHU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N2b-M9-uxU" firstAttribute="centerY" secondItem="MUb-qV-qdT" secondAttribute="centerY" id="Rgs-1e-Ako"/>
+                            <constraint firstItem="N2b-M9-uxU" firstAttribute="centerX" secondItem="MUb-qV-qdT" secondAttribute="centerX" id="wfJ-ye-evC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3MX-8C-tVB"/>
+                    <connections>
+                        <outlet property="loginButton" destination="N2b-M9-uxU" id="jSO-VC-947"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tiX-qv-EA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771.0144927536232" y="432.58928571428572"/>
+        </scene>
+        <!--Trip View Controller-->
+        <scene sceneID="90t-tp-cYv">
+            <objects>
+                <viewController storyboardIdentifier="TripViewController" id="7we-q4-TxN" customClass="TripViewController" customModule="KT20" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Kv-79-G4y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bIe-a6-KxF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UA7-be-ocv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1K3-3x-gmV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2678.2608695652175" y="-276.5625"/>
+        </scene>
+        <!--Spots View Controller-->
+        <scene sceneID="4an-Sx-emy">
+            <objects>
+                <viewController storyboardIdentifier="SpotsViewController" id="pVb-v5-ZZL" customClass="SpotsViewController" customModule="KT20" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cM1-BD-lxW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LWc-dP-LB7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mHr-Gq-qQz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IhQ-TE-fcB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3501.449275362319" y="-283.25892857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PdF-ph-T2u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ymj-Ns-hf8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rT3-ck-C6v">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7we-q4-TxN" kind="relationship" relationship="rootViewController" id="dGT-hJ-Mwn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxf-jo-O2V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771.0144927536232" y="-276.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7mH-Ko-kuG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9oU-9A-6dU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vm3-PA-46o">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AvE-Xi-CG0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBI-h0-C6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="54.910714285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

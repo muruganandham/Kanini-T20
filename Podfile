@@ -6,7 +6,7 @@ target 'KT20' do
   use_frameworks!
 
   # Pods for KT20
-pod 'Firebase/Database'
+  pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
 
