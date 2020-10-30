@@ -31,7 +31,16 @@ class TripViewController: UIViewController {
         if(user == nil ) {
             self.present(loginVC, animated: true, completion: nil)
         } else {
-            print("user: \(user?.email)")
+            if let userID = Auth.auth().currentUser?.uid {
+                let ref = Database.database().reference(withPath: "users/\(userID)")
+                ref.observeSingleEvent(of: .value, with: { snapshot in
+                    if !snapshot.exists() { return }
+                    print(snapshot) // Its print all values including Snap (User)
+                    print(snapshot.value!)
+                    let username = snapshot.childSnapshot(forPath: "username").value
+                    print(username!)
+                })
+            }
         }
     }
     
