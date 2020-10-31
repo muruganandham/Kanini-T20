@@ -74,6 +74,16 @@ class TripViewController: UIViewController {
         
         let addTripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "AddTripViewController") as! AddTripViewController
         self.present(addTripVC, animated: true, completion: nil)
+        self.startTrip()
+    }
+    
+    fileprivate func startTrip() {
+        if let userId = UserManager.shared.userId {
+            var ref: DatabaseReference!
+            ref = Database.database().reference()
+            let tripsRef = ref.child("trips").child(userId).childByAutoId()
+            tripsRef.setValue(["title":"A", "createdOn": Date().timeIntervalSinceReferenceDate, "startPostion": 83.900])
+        }
     }
 }
 
