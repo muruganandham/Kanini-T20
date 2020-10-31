@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 extension UIStoryboard {
     class var main: UIStoryboard {
@@ -26,5 +27,51 @@ extension UIColor {
     
     convenience init(netHex: Int) {
         self.init(red: (netHex >> 16) & 0xff, green: (netHex >> 8) & 0xff, blue: netHex & 0xff)
+    }
+}
+
+extension CLLocationCoordinate2D {
+    
+    // Get a CLPlacemark for this location
+    func lookupPlacemark(completionHandler: @escaping (CLPlacemark?) -> Void) {
+        
+        // Look up the location and pass it to the completion handler
+        let selectedLocation = CLLocation(latitude: latitude, longitude: longitude)
+        CLGeocoder().reverseGeocodeLocation(selectedLocation, completionHandler: { (placemarks, error) in
+            
+            if error == nil {
+                completionHandler(placemarks?.first)
+            } else {
+                // An error occurred during geocoding.
+                print("Error looking up location: \(error!)")
+                completionHandler(nil)
+            }
+        })
+    }
+}
+
+extension CLPlacemark {
+    var customAddress: String {
+        return [[thoroughfare, subThoroughfare], [postalCode, locality]]
+            .map { (subComponents) -> String in
+                subComponents.compactMap({ $0 }).joined(separator: " ")
+            }
+            .filter({ return !$0.isEmpty })
+            .joined(separator: ", ")
+    }
+    
+    var placeName: String? {
+        var names: [String?] = [name, thoroughfare]
+        names.append(contentsOf: areasOfInterest ?? [])
+        return names
+            .compactMap({ $0 })
+            .first
+    }
+    
+    var fullAddress: String {
+        return  [placeName, customAddress]
+            .compactMap({ $0 })
+            .filter({ return !$0.isEmpty })
+            .joined(separator: ", ")
     }
 }
