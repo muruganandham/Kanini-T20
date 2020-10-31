@@ -56,4 +56,13 @@ public struct Trip: Codable {
 
 struct Constants {
     
+    static var trailId: String {
+        get {
+            return UserDefaults.standard.value(forKey: "trailId") as? String ?? ""
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "trailId")
+            UserDefaults.standard.synchronize()
+        }
+    }
 }
