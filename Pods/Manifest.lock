@@ -29,6 +29,7 @@ PODS:
   - FirebaseDatabase (6.6.0):
     - FirebaseCore (~> 6.10)
     - leveldb-library (~> 1.22)
+  - Floaty (4.2.0)
   - GoogleDataTransport (7.3.0):
     - nanopb (~> 1.30906.0)
   - GoogleSignIn (5.0.2):
@@ -73,6 +74,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
+  - Floaty (~> 4.2.0)
   - GoogleSignIn
   - lottie-ios
   - NVActivityIndicatorView (= 4.8.0)
@@ -85,6 +87,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
+    - Floaty
     - GoogleDataTransport
     - GoogleSignIn
     - GoogleUtilities
@@ -103,6 +106,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 1d697bb944bf2af5fc248f1a66e165c9dd88bf97
   FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
   FirebaseDatabase: 13a865a4b85897462b930eb683bda8f52583713f
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
@@ -114,6 +118,6 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
 
-PODFILE CHECKSUM: 5c4edd65a7ca50ad43f0aff1c55449d0a596633a
+PODFILE CHECKSUM: b01690002fd3a9b7f0c31c64f6ba540843c4c663
 
 COCOAPODS: 1.9.3

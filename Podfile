@@ -11,6 +11,7 @@ target 'KT20' do
   pod 'GoogleSignIn'
   pod 'NVActivityIndicatorView', '= 4.8.0'
   pod 'lottie-ios'
+  pod 'Floaty', '~> 4.2.0'
 
   target 'KT20Tests' do
     inherit! :search_paths
