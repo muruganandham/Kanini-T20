@@ -40,8 +40,16 @@ class TripViewController: UIViewController {
         
         let user = Auth.auth().currentUser
         if(user == nil ) {
-            self.present(loginVC, animated: true, completion: nil)
-        } else {
+            self.present(loginVC, animated: false, completion: nil)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+        
+        let user = Auth.auth().currentUser
+        if(user != nil )  {
             if let userID = Auth.auth().currentUser?.uid {
                 let ref = Database.database().reference(withPath: "trips/\(userID)")
                 ref.observeSingleEvent(of: .value, with: { snapshot in
@@ -56,11 +64,6 @@ class TripViewController: UIViewController {
                 })
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = false
     }
     
     @objc func onBackButton(_ sender: UIBarButtonItem) {
@@ -79,7 +82,7 @@ class TripViewController: UIViewController {
         
         let addTripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "AddTripViewController") as! AddTripViewController
         self.present(addTripVC, animated: true, completion: nil)
-        self.startTrip()
+       // self.startTrip()
     }
     
     fileprivate func startTrip() {
@@ -133,8 +136,6 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "TripTableViewCell",
             for: indexPath) as! TripTableViewCell
-        //cell.fileName = ActivityPdfAttachmentTableViewCell.fileNameWithIndex(indexPath.row + 1)
-        //cell.attachment = pdfAttachment
         return cell
     }
     
