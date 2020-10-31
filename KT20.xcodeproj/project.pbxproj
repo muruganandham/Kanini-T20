@@ -28,6 +28,8 @@
 		52E6F28A254C8D820098DA75 /* 6843-map-location.json in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F289254C8D820098DA75 /* 6843-map-location.json */; };
 		52E6F2D9254CF10E0098DA75 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2D8254CF10E0098DA75 /* AddTripViewController.swift */; };
 		52E6F2DF254CF9AF0098DA75 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2DE254CF9AF0098DA75 /* TripTableViewCell.swift */; };
+		52E6F344254D396F0098DA75 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F343254D396F0098DA75 /* bg.jpg */; };
+		52E6F34C254D3C200098DA75 /* bg_blur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F34B254D3C200098DA75 /* bg_blur.jpg */; };
 		5596E5CCFD467D8A27336574 /* Pods_KT20Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB45ADAA30FCBE1B31D64714 /* Pods_KT20Tests.framework */; };
 		87C4509D3225DA4AAE823DC2 /* Pods_KT20.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC6BAEEE8A1C2808399EED /* Pods_KT20.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		52E6F289254C8D820098DA75 /* 6843-map-location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "6843-map-location.json"; sourceTree = "<group>"; };
 		52E6F2D8254CF10E0098DA75 /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		52E6F2DE254CF9AF0098DA75 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		52E6F343254D396F0098DA75 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		52E6F34B254D3C200098DA75 /* bg_blur.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_blur.jpg; sourceTree = "<group>"; };
 		7313749CDD0C4348D64183D6 /* Pods-KT20-KT20UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.debug.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F0381E28975F884137ABCE4 /* Pods-KT20.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20.debug.xcconfig"; path = "Target Support Files/Pods-KT20/Pods-KT20.debug.xcconfig"; sourceTree = "<group>"; };
 		9EF3BE8A35B9DEAAE0BD5DE0 /* Pods-KT20Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.release.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 		52E6F1E8254C7FCA0098DA75 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				52E6F34B254D3C200098DA75 /* bg_blur.jpg */,
+				52E6F343254D396F0098DA75 /* bg.jpg */,
 				52E6F289254C8D820098DA75 /* 6843-map-location.json */,
 				52E6F1E9254C7FCA0098DA75 /* travel.gpx */,
 			);
@@ -350,8 +356,10 @@
 				52E6F1F2254C7FCA0098DA75 /* travel.gpx in Resources */,
 				52E6F28A254C8D820098DA75 /* 6843-map-location.json in Resources */,
 				52E6F1FF254C7FDA0098DA75 /* GoogleService-Info.plist in Resources */,
+				52E6F344254D396F0098DA75 /* bg.jpg in Resources */,
 				52E6F1B7254C7F6E0098DA75 /* Assets.xcassets in Resources */,
 				52E6F1B5254C7F6D0098DA75 /* Main.storyboard in Resources */,
+				52E6F34C254D3C200098DA75 /* bg_blur.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

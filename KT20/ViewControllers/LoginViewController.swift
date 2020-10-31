@@ -12,7 +12,11 @@ import NVActivityIndicatorView
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton! {
+        didSet {
+            loginButton.layer.cornerRadius = loginButton.frame.size.height / 2.0
+        }
+    }
     
     var onLogIn: ((User?) -> Void)?
     var onLogOut: (() -> Void)?
