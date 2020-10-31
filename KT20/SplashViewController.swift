@@ -20,6 +20,11 @@ class SplashViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        
+        LocationManager.shared.getUserLocation(location: { (location) in
+            print(location?.coordinate.latitude ?? 0.0)
+            print(location?.coordinate.longitude ?? 0.0)
+        })
     }
     
     func playAnimation(){

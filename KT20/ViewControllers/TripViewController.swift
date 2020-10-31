@@ -8,14 +8,23 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import Floaty
 
 class TripViewController: UIViewController {
 
     let loginVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
     
+    @IBOutlet weak var addButton: UIButton! {
+        didSet {
+            addButton.layer.cornerRadius = addButton.frame.size.height / 2.0
+            addButton.layer.masksToBounds = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu_logout"), style: .plain, target: self, action: #selector(onBackButton(_:)))
+        self.title = "Home"
         
         loginVC.modalPresentationStyle = .custom
         loginVC.onLogIn = { [weak self] user in
@@ -60,5 +69,49 @@ class TripViewController: UIViewController {
         }
         return
     }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        
+        let addTripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "AddTripViewController") as! AddTripViewController
+        self.present(addTripVC, animated: true, completion: nil)
+    }
+}
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
+extension TripViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layoutIfNeeded()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "TripTableViewCell",
+            for: indexPath) as! TripTableViewCell
+        //cell.fileName = ActivityPdfAttachmentTableViewCell.fileNameWithIndex(indexPath.row + 1)
+        //cell.attachment = pdfAttachment
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
+        self.navigationController?.pushViewController(spotVC, animated: true)
+    }
 }
