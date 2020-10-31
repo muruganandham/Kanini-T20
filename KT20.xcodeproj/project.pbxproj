@@ -26,6 +26,8 @@
 		52E6F1FA254C7FD10098DA75 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1F9254C7FD10098DA75 /* SplashViewController.swift */; };
 		52E6F1FF254C7FDA0098DA75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F1FE254C7FDA0098DA75 /* GoogleService-Info.plist */; };
 		52E6F28A254C8D820098DA75 /* 6843-map-location.json in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F289254C8D820098DA75 /* 6843-map-location.json */; };
+		52E6F2D9254CF10E0098DA75 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2D8254CF10E0098DA75 /* AddTripViewController.swift */; };
+		52E6F2DF254CF9AF0098DA75 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2DE254CF9AF0098DA75 /* TripTableViewCell.swift */; };
 		5596E5CCFD467D8A27336574 /* Pods_KT20Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB45ADAA30FCBE1B31D64714 /* Pods_KT20Tests.framework */; };
 		87C4509D3225DA4AAE823DC2 /* Pods_KT20.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC6BAEEE8A1C2808399EED /* Pods_KT20.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +76,8 @@
 		52E6F1F9254C7FD10098DA75 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		52E6F1FE254C7FDA0098DA75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52E6F289254C8D820098DA75 /* 6843-map-location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "6843-map-location.json"; sourceTree = "<group>"; };
+		52E6F2D8254CF10E0098DA75 /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
+		52E6F2DE254CF9AF0098DA75 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		7313749CDD0C4348D64183D6 /* Pods-KT20-KT20UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.debug.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F0381E28975F884137ABCE4 /* Pods-KT20.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20.debug.xcconfig"; path = "Target Support Files/Pods-KT20/Pods-KT20.debug.xcconfig"; sourceTree = "<group>"; };
 		9EF3BE8A35B9DEAAE0BD5DE0 /* Pods-KT20Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.release.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 		52E6F1AC254C7F6D0098DA75 /* KT20 */ = {
 			isa = PBXGroup;
 			children = (
+				52E6F2DD254CF9980098DA75 /* Cells */,
 				52E6F1E8254C7FCA0098DA75 /* TestData */,
 				52E6F1E3254C7FCA0098DA75 /* Utilities */,
 				52E6F1EA254C7FCA0098DA75 /* ViewControllers */,
@@ -194,9 +199,18 @@
 			children = (
 				52E6F1EB254C7FCA0098DA75 /* SpotsViewController.swift */,
 				52E6F1EC254C7FCA0098DA75 /* TripViewController.swift */,
+				52E6F2D8254CF10E0098DA75 /* AddTripViewController.swift */,
 				52E6F1ED254C7FCA0098DA75 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		52E6F2DD254CF9980098DA75 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				52E6F2DE254CF9AF0098DA75 /* TripTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9060BEB44AA2AD6C12C95161 /* Pods */ = {
@@ -499,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E6F2DF254CF9AF0098DA75 /* TripTableViewCell.swift in Sources */,
 				52E6F1F5254C7FCA0098DA75 /* LoginViewController.swift in Sources */,
 				52E6F1F3254C7FCA0098DA75 /* SpotsViewController.swift in Sources */,
 				52E6F1F4254C7FCA0098DA75 /* TripViewController.swift in Sources */,
@@ -506,6 +521,7 @@
 				52E6F1B0254C7F6D0098DA75 /* SceneDelegate.swift in Sources */,
 				52E6F1F1254C7FCA0098DA75 /* LocationManager.swift in Sources */,
 				52E6F1F0254C7FCA0098DA75 /* ViewManager.swift in Sources */,
+				52E6F2D9254CF10E0098DA75 /* AddTripViewController.swift in Sources */,
 				52E6F1EF254C7FCA0098DA75 /* UIExtras.swift in Sources */,
 				52E6F1EE254C7FCA0098DA75 /* Constants.swift in Sources */,
 				52E6F1FA254C7FD10098DA75 /* SplashViewController.swift in Sources */,
@@ -696,7 +712,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kt20.ios.KT20;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -717,7 +733,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kt20.ios.KT20;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
