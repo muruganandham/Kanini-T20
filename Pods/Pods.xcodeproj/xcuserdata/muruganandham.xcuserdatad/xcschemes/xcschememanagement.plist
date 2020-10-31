@@ -48,8 +48,11 @@
 		</dict>
 		<key>Floaty.xcscheme</key>
 		<dict>
+<<<<<<< HEAD
 			<key>isShown</key>
 			<false/>
+=======
+>>>>>>> e783325bdd9d6e3dcc3e06e1e1840d46f216194e
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
