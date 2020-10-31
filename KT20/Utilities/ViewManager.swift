@@ -13,3 +13,8 @@ public class ViewManager {
     let activityIndicatorView  = NVActivityIndicatorPresenter.sharedInstance
 
 }
+
+public class SharedObjects {
+    public static let shared = SharedObjects()
+    var activeTrip: Trip?
+}
