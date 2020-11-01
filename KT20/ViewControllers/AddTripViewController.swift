@@ -70,7 +70,6 @@ class AddTripViewController: UIViewController {
         location.coordinate.lookupPlacemark(completionHandler: { (placemark) in
             if let placemark = placemark, !placemark.fullAddress.isEmpty {
                 SharedObjects.shared.activeTrip?.sourceAddress = placemark.fullAddress
-                self.startTrip()
             }
         })
     }
@@ -91,12 +90,11 @@ class AddTripViewController: UIViewController {
             }
             
             //final
-            let trip = SharedObjects.shared.activeTrip
-            print(trip?.startTime)
-            print(trip?.sourceAddress)
-            print(trip?.endTime)
-            print(trip?.destinationAddress)
-            print(trip?.routeArray)
+            print(SharedObjects.shared.activeTrip)
+            if let trip = SharedObjects.shared.activeTrip {
+                print(trip)
+                self.startTrip(trip: trip)
+            }
         })
     }
     
@@ -107,20 +105,20 @@ class AddTripViewController: UIViewController {
     
     //MARK: - Methods
     
-    fileprivate func startTrip() {
-        if let userId = UserManager.shared.userId {
+    fileprivate func startTrip(trip: Trip) {
+        if let userId = UserManager.shared.userId, trip != nil {
             var ref: DatabaseReference!
             ref = Database.database().reference()
             let tripsRef = ref.child("trips").child(userId).childByAutoId()
-            tripsRef.setValue(["title":"A",
-                               "sourceAddress": "",
-                               "destinationAddress": "",
-                               "sourceLat": 0.0,
-                               "sourceLong": 0.0,
-                               "destinationLat": 0.0,
-                               "destinationLong": 0.0,
-                               "startedAt": Date().timeIntervalSinceReferenceDate,
-                               "endedAt": Date().timeIntervalSinceReferenceDate,
+            tripsRef.setValue(["title":"New trip",
+                               "sourceAddress": trip.sourceAddress,
+                               "destinationAddress": trip.destinationAddress,
+                               "sourceLat": trip.sourceLat,
+                               "sourceLong": trip.sourceLong,
+                               "destinationLat": trip.destinationLat,
+                               "destinationLong": trip.destinationLong,
+                               "startedAt": trip.startTime,
+                               "endedAt": trip.endTime,
                                "kms": 5.0])
         }
     }
