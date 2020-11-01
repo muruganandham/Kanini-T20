@@ -73,44 +73,6 @@ public class LocationManager: NSObject {
     public func stopLocation() {
         locationManager?.stopUpdatingLocation()
     }
-//
-//    // Start keeping a record of location, eventually to make a PolyLine
-//    // No callback for this one
-//    public func startLocationTrack() {
-//        mode = .Track
-//        locationManager?.startUpdatingLocation()
-//        // For tracks we want a lot more detail
-//        locationManager.distanceFilter = 3.0
-//    }
-//
-//    // Switch from tracking to single mode
-//    public func stopLocationTrack() {
-//        mode = .Single
-//        locationTrack = nil
-//    }
-    
-    // Used when making a polyline track
-//    fileprivate var locationTrack: [CLLocationCoordinate2D]?
-//
-    // Start requesting the location updates
-//    func getUserLocation(location: @escaping userCLLocation) {
-//        startLocation()
-//        onRequestUserLocation = location
-//    }
-    
-    // Return the current location track since when we started recording
-//    func getUserTrack() -> [CLLocationCoordinate2D] {
-//        guard let track = locationTrack else {
-//            return []
-//        }
-//        
-//        return track
-//    }
-//
-//    // Return true if we're actively tracking
-//    func isTracking() -> Bool {
-//        return locationTrack != nil
-//    }
     
     static func showEnableLocationAlert() {
         let alert = UIAlertController(title: "Allow Location Access", message: "This app needs access to your location. Turn on Location Services in your device settings.", preferredStyle: UIAlertController.Style.alert)

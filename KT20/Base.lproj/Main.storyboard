@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9oU-9A-6dU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9oU-9A-6dU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,14 +22,14 @@
                                 <color key="backgroundColor" red="0.4431372549" green="0.0" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9hl-dY-pG9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6OB-l0-kJr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9hl-dY-pG9" secondAttribute="bottom" constant="-34" id="Bj7-58-OfT"/>
                             <constraint firstItem="9hl-dY-pG9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ghI-wQ-6DJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9hl-dY-pG9" secondAttribute="trailing" id="mVq-gr-gxW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ymQ-kE-iR7"/>
                     <connections>
@@ -49,7 +51,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rNF-Im-uhX">
                                 <rect key="frame" x="0.0" y="-10" width="414" height="906"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2b-M9-uxU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2b-M9-uxU">
                                 <rect key="frame" x="61" y="657" width="292" height="44"/>
                                 <color key="backgroundColor" red="0.4431372549" green="0.0" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -77,7 +79,8 @@ trip</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mei-JG-EHU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rNF-Im-uhX" firstAttribute="leading" secondItem="mei-JG-EHU" secondAttribute="leading" id="2ux-FE-Auk"/>
                             <constraint firstItem="rNF-Im-uhX" firstAttribute="top" secondItem="mei-JG-EHU" secondAttribute="top" constant="-54" id="HU3-Iz-2bj"/>
@@ -90,7 +93,6 @@ trip</string>
                             <constraint firstItem="mei-JG-EHU" firstAttribute="trailing" secondItem="5u8-Ff-mc1" secondAttribute="trailing" constant="20" id="o9b-RD-TYh"/>
                             <constraint firstItem="N2b-M9-uxU" firstAttribute="centerX" secondItem="MUb-qV-qdT" secondAttribute="centerX" id="wfJ-ye-evC"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mei-JG-EHU"/>
                     </view>
                     <navigationItem key="navigationItem" id="3MX-8C-tVB"/>
                     <connections>
@@ -126,7 +128,7 @@ trip</string>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_track_loc" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-sB-dxe">
                                                     <rect key="frame" x="117" y="30" width="40" height="40"/>
-                                                    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" systemColor="systemGreenColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="BbC-I7-F0S"/>
                                                         <constraint firstAttribute="width" constant="40" id="DTI-qN-OLm"/>
@@ -134,7 +136,7 @@ trip</string>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_track_loc" translatesAutoresizingMaskIntoConstraints="NO" id="RF0-fQ-zvW">
                                                     <rect key="frame" x="117" y="103" width="40" height="40"/>
-                                                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" systemColor="systemRedColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="4Qq-xv-K8j"/>
                                                         <constraint firstAttribute="width" constant="40" id="CCk-Cc-gE4"/>
@@ -160,7 +162,7 @@ trip</string>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2c-oz-kMS">
                                                     <rect key="frame" x="104" y="40" width="3" height="94"/>
-                                                    <color key="backgroundColor" red="0.44313725490196076" green="0.0" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="3" id="2T3-XC-6wi"/>
                                                         <constraint firstAttribute="height" constant="94" id="QQk-LN-8UO"/>
@@ -247,6 +249,7 @@ trip</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bIe-a6-KxF"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hK4-Gj-wfX" firstAttribute="leading" secondItem="bIe-a6-KxF" secondAttribute="leading" id="1La-fe-FYS"/>
@@ -260,7 +263,6 @@ trip</string>
                             <constraint firstItem="bIe-a6-KxF" firstAttribute="trailing" secondItem="hK4-Gj-wfX" secondAttribute="trailing" id="wDJ-1p-ek2"/>
                             <constraint firstItem="bIe-a6-KxF" firstAttribute="bottom" secondItem="K8p-o3-zHI" secondAttribute="bottom" constant="-34" id="xO2-LC-CkP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bIe-a6-KxF"/>
                     </view>
                     <navigationItem key="navigationItem" id="UA7-be-ocv"/>
                     <connections>
@@ -283,12 +285,18 @@ trip</string>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Buk-HH-v6p">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pVb-v5-ZZL" id="nNm-gB-u1a"/>
+                                </connections>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="LWc-dP-LB7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="mHr-Gq-qQz"/>
+                    <connections>
+                        <outlet property="mapView" destination="Buk-HH-v6p" id="vgt-eZ-LOS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhQ-TE-fcB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -305,7 +313,7 @@ trip</string>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BVY-Lc-d7n">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yro-b2-3Xd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yro-b2-3Xd">
                                 <rect key="frame" x="61" y="778" width="292" height="44"/>
                                 <color key="backgroundColor" red="0.4431372549" green="0.0" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -332,7 +340,7 @@ trip</string>
                                     <action selector="closeButtonPressed:" destination="ciq-u2-VlW" eventType="touchUpInside" id="8Ki-eM-Myj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHq-ir-81z">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHq-ir-81z">
                                 <rect key="frame" x="157" y="398" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.4431372549" green="0.0" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -347,7 +355,7 @@ trip</string>
                                     <action selector="startButtonPressed:" destination="ciq-u2-VlW" eventType="touchUpInside" id="XaK-RI-yvU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADR-gc-lVU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADR-gc-lVU">
                                 <rect key="frame" x="61" y="714" width="292" height="44"/>
                                 <color key="backgroundColor" red="0.4431372549" green="0.0" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -365,7 +373,8 @@ trip</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xzj-oR-NZO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xzj-oR-NZO" firstAttribute="trailing" secondItem="wZp-2C-Its" secondAttribute="trailing" constant="15" id="5Is-SX-AAb"/>
                             <constraint firstItem="yro-b2-3Xd" firstAttribute="centerX" secondItem="ASA-6Z-pNt" secondAttribute="centerX" id="5zy-3V-jrd"/>
@@ -383,10 +392,10 @@ trip</string>
                             <constraint firstItem="xzj-oR-NZO" firstAttribute="bottom" secondItem="yro-b2-3Xd" secondAttribute="bottom" constant="40" id="uS4-oe-SQD"/>
                             <constraint firstItem="xzj-oR-NZO" firstAttribute="trailing" secondItem="wZp-2C-Its" secondAttribute="trailing" constant="15" id="zu7-Vj-Zg1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xzj-oR-NZO"/>
                     </view>
                     <connections>
                         <outlet property="addSpotButton" destination="yro-b2-3Xd" id="30S-lz-nyM"/>
+                        <outlet property="mapView" destination="BVY-Lc-d7n" id="J4z-TE-2Ps"/>
                         <outlet property="startButton" destination="UHq-ir-81z" id="ZOu-wh-DiF"/>
                         <outlet property="stopButton" destination="ADR-gc-lVU" id="rfc-zo-xjX"/>
                     </connections>
@@ -432,11 +441,23 @@ trip</string>
             <point key="canvasLocation" x="79.710144927536234" y="54.910714285714285"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="9hl-dY-pG9"/>
+    </designables>
     <resources>
         <image name="bg.jpg" width="750" height="920"/>
         <image name="bg_blur.jpg" width="750" height="920"/>
         <image name="cross" width="20" height="20"/>
         <image name="iconPlus" width="15" height="15"/>
         <image name="menu_track_loc" width="20" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
