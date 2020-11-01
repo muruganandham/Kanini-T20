@@ -71,11 +71,9 @@ class AddTripViewController: UIViewController {
             return
         }
         SharedObjects.shared.activeTrip = Trip()
-        SharedObjects.shared.activeTrip?.startTime = "\(Date())"
-        SharedObjects.shared.activeTrip?.sourceLat = "\(location.coordinate.latitude)"
-        SharedObjects.shared.activeTrip?.sourceLong = "\(location.coordinate.longitude)"
-        SharedObjects.shared.activeTrip?.tripId = UUID().uuidString.lowercased()
-        SharedObjects.shared.activeTrip?.routeArray = ["\(location.coordinate.latitude), \(location.coordinate.longitude)"]
+        SharedObjects.shared.activeTrip?.startTime = Date().timeIntervalSinceReferenceDate
+        SharedObjects.shared.activeTrip?.sourceLat = location.coordinate.latitude
+        SharedObjects.shared.activeTrip?.sourceLong = location.coordinate.longitude
         location.coordinate.lookupPlacemark(completionHandler: { (placemark) in
             if let placemark = placemark, !placemark.fullAddress.isEmpty {
                 SharedObjects.shared.activeTrip?.sourceAddress = placemark.fullAddress
@@ -84,6 +82,8 @@ class AddTripViewController: UIViewController {
                     LocationManager.shared.delegate = self
                     self.currentTripId = tripId
                 }
+            } else {
+                print("❌ Source Placemark is not available")
             }
         })
     }
@@ -93,17 +93,19 @@ class AddTripViewController: UIViewController {
         guard let location = LocationManager.shared.userLocation else {
             return
         }
-        SharedObjects.shared.activeTrip?.endTime = "\(Date())"
-        SharedObjects.shared.activeTrip?.destinationLat = "\(location.coordinate.latitude)"
-        SharedObjects.shared.activeTrip?.destinationLong = "\(location.coordinate.longitude)"
-        SharedObjects.shared.activeTrip?.routeArray?.append("\(location.coordinate.latitude), \(location.coordinate.longitude)")
+        SharedObjects.shared.activeTrip?.endTime = Date().timeIntervalSinceReferenceDate
+        SharedObjects.shared.activeTrip?.destinationLat = location.coordinate.latitude
+        SharedObjects.shared.activeTrip?.destinationLong = location.coordinate.longitude
         location.coordinate.lookupPlacemark(completionHandler: { (placemark) in
             if let placemark = placemark, !placemark.fullAddress.isEmpty {
                 SharedObjects.shared.activeTrip?.destinationAddress = placemark.fullAddress
                 LocationManager.shared.stopLocation()
+                if let trip = SharedObjects.shared.activeTrip {
+                    self.stopTrip(trip: trip)
+                }
+            }  else {
+                print("❌ Destination Placemark is not available")
             }
-            
-            //final
             print(SharedObjects.shared.activeTrip)
         })
     }
@@ -125,22 +127,28 @@ class AddTripViewController: UIViewController {
     //MARK: - Methods
     fileprivate func startTrip(trip: Trip) -> String? {
         if let userId = UserManager.shared.userId, trip != nil {
-            var ref: DatabaseReference!
-            ref = Database.database().reference()
-            let tripsRef = ref.child("trips").child(userId).childByAutoId()
+            let tripsRef = dbRef.child("trips").child(userId).childByAutoId()
             tripsRef.setValue(["title":"New trip",
-                               "sourceAddress": trip.sourceAddress,
-                               "destinationAddress": trip.destinationAddress,
-                               "sourceLat": trip.sourceLat,
-                               "sourceLong": trip.sourceLong,
-                               "destinationLat": trip.destinationLat,
-                               "destinationLong": trip.destinationLong,
-                               "startedAt": "\(trip.startTime)",
-                               "endedAt": "\(trip.endTime)",
-                               "kms": 5.0])
+                               "sourceAddress": trip.sourceAddress ?? "",
+                               "sourceLat": trip.sourceLat ?? 0.0,
+                               "sourceLong": trip.sourceLong ?? 0.0,
+                               "startedAt": trip.startTime ?? 0.0])
             return tripsRef.key
         }
         return nil
+    }
+    
+    fileprivate func stopTrip(trip: Trip) {
+        if let userId = UserManager.shared.userId {
+            let destinationAddPath = "trips/\(userId)/\(currentTripId ?? "")/destinationAddress"
+            let destinationLat = "trips/\(userId)/\(currentTripId ?? "")/destinationLat"
+            let destinationLng = "trips/\(userId)/\(currentTripId ?? "")/destinationLong"
+            let endedAt = "trips/\(userId)/\(currentTripId ?? "")/endedAt"
+            let _ = dbRef.child(destinationAddPath).setValue(trip.destinationAddress ?? "")
+            let _ = dbRef.child(destinationLat).setValue(trip.destinationLat ?? 0.0)
+            let _ = dbRef.child(destinationLng).setValue(trip.destinationLong ?? 0.0)
+            let _ = dbRef.child(endedAt).setValue(trip.endTime ?? 0.0)
+        }
     }
 }
 
@@ -152,7 +160,8 @@ extension AddTripViewController: LocationManagerDelegate {
     func didUpdateLocation(location: CLLocation) {
         let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
         spotsRef.setValue(["lat": location.coordinate.latitude,
-                           "lng":location.coordinate.longitude])
+                           "lng":location.coordinate.longitude,
+                           "createdAt": Date().timeIntervalSinceReferenceDate])
         self.currentSpotkey = spotsRef.key
     }
 }

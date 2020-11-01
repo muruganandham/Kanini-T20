@@ -52,11 +52,12 @@ class TripViewController: UIViewController {
         let user = Auth.auth().currentUser
         if(user != nil )  {
             if let userID = Auth.auth().currentUser?.uid {
-                let ref = Database.database().reference(withPath: "trips/\(userID)")
+                let ref = Database.database().reference(withPath: "trips/\(userID)").queryOrdered(byChild: "startedAt")
                 ref.observeSingleEvent(of: .value, with: { snapshot in
                     if !snapshot.exists() {
                         return
                     }
+                    print(snapshot)
                     if let tempDic: Dictionary = snapshot.value as? Dictionary<String, Any> {
                         self.tripsDictionary = tempDic
                         self.tripsTableView.reloadData()
@@ -68,11 +69,14 @@ class TripViewController: UIViewController {
     
     //MARK: - Methods
     fileprivate func getSpotsBy(tripId: String) {
-        let spotsRef = Database.database().reference(withPath: "spots/\(tripId)")
+        let spotsRef = Database.database().reference(withPath: "spots/\(tripId)").queryOrdered(byChild: "createdAt")
         spotsRef.observeSingleEvent(of: .value, with: { snapshot in
             if !snapshot.exists() {
                 return
             }
+            
+            print(snapshot)
+            
             if let spotsDict: Dictionary = snapshot.value as? Dictionary<String, Any> {
                 print(spotsDict.count)
                 print(spotsDict.keys)
