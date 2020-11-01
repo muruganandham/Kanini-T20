@@ -178,12 +178,12 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
         let tripsArray = Array(tripsDict.keys)
-        self.getSpotsBy(tripId: tripsArray[indexPath.row]) { (dictionary) in
+        self.getSpotsBy(tripId: tripsArray[indexPath.row], success: { (dictionary) in
             let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
             spotVC.routeDict = dictionary
             print(dictionary)
             self.navigationController?.pushViewController(spotVC, animated: true)
-        } error: { (errorString) in
+        }) { (errorString) in
             print("error: \(errorString)")
         }
     }
