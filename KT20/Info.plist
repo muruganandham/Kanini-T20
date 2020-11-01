@@ -79,5 +79,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>The camera is used to add photo to explore about spot.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>The photo gallery is used to to explore about spot.</string>
 </dict>
 </plist>

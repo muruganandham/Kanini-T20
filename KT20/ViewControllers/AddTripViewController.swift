@@ -123,18 +123,30 @@ class AddTripViewController: UIViewController {
         })
     }
     
-    @IBAction func addStopButtonPressed(_ sender: Any) {
+    @IBAction func addStopButtonPressed(_ sender: UIButton) {
         guard let spotKey = currentSpotkey else {
             return
         }
-        let image = UIImage(named: "menu_logo")
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Add from Photo Library", style: .default, handler: { (_) in
+            self.showImagePicker(sourceType: .photoLibrary, sourceView: sender)
+        }))
+        alert.addAction(UIAlertAction(title: "Take a Photo", style: .default, handler: { (_) in
+            self.showImagePicker(sourceType: .camera, sourceView: sender)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.popoverPresentationController?.sourceView = sender
+        alert.popoverPresentationController?.sourceRect = sender.bounds
+        self.present(alert, animated: true, completion: nil)
+        /*let image = UIImage(named: "menu_logo")
         if let base64 = image?.toBase64() {
             print(spotKey)
             let imagePath = "spots/\(currentTripId ?? "")/\(spotKey)/base64Image"
             let commentPath = "spots/\(currentTripId ?? "")/\(spotKey)/comment"
             let _ = dbRef.child(imagePath).setValue(base64)
             let _ = dbRef.child(commentPath).setValue("Test comment")
-        }
+        }*/
     }
     
     //MARK: - Methods
@@ -161,6 +173,16 @@ class AddTripViewController: UIViewController {
             let _ = dbRef.child(destinationLat).setValue(trip.destinationLat ?? 0.0)
             let _ = dbRef.child(destinationLng).setValue(trip.destinationLong ?? 0.0)
             let _ = dbRef.child(endedAt).setValue(trip.endedAt ?? 0.0)
+        }
+    }
+    
+    fileprivate func showImagePicker(sourceType: UIImagePickerController.SourceType, sourceView: UIView) {
+        DispatchQueue.main.async {
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = sourceType
+            imagePicker.popoverPresentationController?.sourceView = sourceView
+            imagePicker.popoverPresentationController?.sourceRect = sourceView.bounds
+            self.present(imagePicker, animated: true, completion: nil)
         }
     }
 }
