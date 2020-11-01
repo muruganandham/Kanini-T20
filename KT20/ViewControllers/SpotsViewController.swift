@@ -24,7 +24,7 @@ class SpotsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("routeDict: \(routeDict)")
+        self.title = "Spots"
         
         var points: [CLLocationCoordinate2D] = []
         var center: CLLocationCoordinate2D?
@@ -56,8 +56,9 @@ class SpotsViewController: UIViewController {
             }
             
             points.append(point)
+            print("locPoint.image: \(locPoint.base64Image)")
             
-            if !(locPoint.image?.isEmpty ?? true) {
+            if !(locPoint.base64Image?.isEmpty ?? true) {
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = point
                 annotation.title = "\(point.latitude), \(point.longitude)"
