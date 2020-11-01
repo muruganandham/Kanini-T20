@@ -10,8 +10,8 @@ import Foundation
 struct Spot: Codable {
     var note: String?
     var image: String? // base64
-    var lat: String?
-    var long: String?
+    var lat: Double?
+    var long: Double?
     
     enum CodingKeys: String, CodingKey {
         case note
@@ -23,13 +23,13 @@ struct Spot: Codable {
 
 public struct Trip: Codable {
     var sourceAddress: String?
-    var sourceLat: String?
-    var sourceLong: String?
+    var sourceLat: Double?
+    var sourceLong: Double?
     var destinationAddress: String?
-    var destinationLat: String?
-    var destinationLong: String?
-    var startTime: String?
-    var endTime: String?
+    var destinationLat: Double?
+    var destinationLong: Double?
+    var startTime: Double?
+    var endTime: Double?
     var kms: Double?
     var tripId: String?
     var spots: [Spot?]?
