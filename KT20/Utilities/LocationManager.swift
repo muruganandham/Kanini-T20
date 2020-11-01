@@ -11,6 +11,12 @@ import MapKit
 
 public typealias userCLLocation = ((_ location: CLLocation?) -> Void)
 
+
+protocol LocationManagerDelegate: class {
+    func didUpdateLocation(location: CLLocation)
+    func didFailWithError(error: Error)
+}
+
 /**
  Helper object around location logic on iOS.
  */
@@ -28,6 +34,7 @@ public class LocationManager: NSObject {
     //private var onRequestUserLocation: userCLLocation?
     private var locationManager: CLLocationManager!
     private(set) var formattedUserLocation: String?
+    weak var delegate: LocationManagerDelegate?
     
 //    private enum Mode {
 //        case None
@@ -171,6 +178,7 @@ extension LocationManager: CLLocationManagerDelegate {
     
     private func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error:\(NSError.description())")
+        self.delegate?.didFailWithError(error: error)
     }
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -178,7 +186,8 @@ extension LocationManager: CLLocationManagerDelegate {
             return
         }
         userLocation = lastLocation
-        print(userLocation)
+        self.delegate?.didUpdateLocation(location: lastLocation)
+//        print(userLocation)
         //onRequestUserLocation?(userLocation)
 //        switch mode {
 //        case .None:

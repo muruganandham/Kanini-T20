@@ -66,6 +66,21 @@ class TripViewController: UIViewController {
         }
     }
     
+    //MARK: - Methods
+    fileprivate func getSpotsBy(tripId: String) {
+        let spotsRef = Database.database().reference(withPath: "spots/\(tripId)")
+        spotsRef.observeSingleEvent(of: .value, with: { snapshot in
+            if !snapshot.exists() {
+                return
+            }
+            if let spotsDict: Dictionary = snapshot.value as? Dictionary<String, Any> {
+                print(spotsDict.count)
+                print(spotsDict.keys)
+                print(spotsDict.values)
+            }
+        })
+    }
+    
     @objc func onBackButton(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
         do {
@@ -137,7 +152,15 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
-        self.navigationController?.pushViewController(spotVC, animated: true)
+        guard let tripsDict = self.tripsDictionary else {
+            return
+        }
+        let tripsArray = Array(tripsDict.keys)
+        print(tripsArray[indexPath.row])
+        
+        self.getSpotsBy(tripId: tripsArray[indexPath.row])
+        
+//        let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
+//        self.navigationController?.pushViewController(spotVC, animated: true)
     }
 }
