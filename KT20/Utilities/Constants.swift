@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Spot: Codable {
     var note: String?
     var image: String? // base64

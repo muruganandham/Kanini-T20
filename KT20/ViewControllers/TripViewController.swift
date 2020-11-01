@@ -11,8 +11,9 @@ import GoogleSignIn
 import Floaty
 
 class TripViewController: UIViewController {
-
+    
     let loginVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+    var tripArray = [Trip]()
     
     @IBOutlet weak var tripsTableView: UITableView!
     @IBOutlet weak var addButton: UIButton! {
@@ -57,7 +58,6 @@ class TripViewController: UIViewController {
                         return
                     }
                     if let tempDic: Dictionary = snapshot.value as? Dictionary<String, Any> {
-                        print(tempDic.keys)
                         self.tripsDictionary = tempDic
                         self.tripsTableView.reloadData()
                     }
@@ -98,7 +98,7 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let trips = self.tripsDictionary?.keys, !trips.isEmpty else {
             tableView.setEmptyView(title: "No results", message: "", messageImage: UIImage())
-                return 0
+            return 0
         }
         tableView.restore()
         return trips.count
@@ -116,6 +116,22 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "TripTableViewCell",
             for: indexPath) as! TripTableViewCell
+        
+        guard let trips = self.tripsDictionary?.keys, !trips.isEmpty else {
+            return UITableViewCell()
+        }
+        let key = Array(trips)[indexPath.row]
+        if let dict = self.tripsDictionary?[key] {
+            let jsonData = try! JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let decoder = JSONDecoder()
+            do {
+                let tripObj = try decoder.decode(Trip.self, from: jsonData)
+                cell.sourceLabel.text = tripObj.sourceAddress
+                cell.destLabel.text = tripObj.destinationAddress
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
         return cell
     }
     
