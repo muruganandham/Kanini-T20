@@ -27,5 +27,15 @@ class TripTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        self.dateLabel.text = ""
+        self.sourceIcon.image = nil
+        self.destIcon.image = nil
+        self.sourceLabel.text = ""
+        self.destLabel.text = ""
+        self.sourceTimeLabel.text = ""
+        self.destTimeLabel.text = ""
+    }
 
 }
