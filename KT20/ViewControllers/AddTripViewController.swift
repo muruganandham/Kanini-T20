@@ -60,6 +60,7 @@ class AddTripViewController: UIViewController {
         ref = Database.database().reference()
         return ref
     }
+    var currentSpotkey: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,8 +120,17 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func addStopButtonPressed(_ sender: Any) {
-        
-        
+        guard let spotKey = currentSpotkey else {
+            return
+        }
+        let image = UIImage(named: "menu_logo")
+        if let base64 = image?.toBase64() {
+            print(spotKey)
+            let imagePath = "spots/\(currentTripId ?? "")/\(spotKey)/base64Image"
+            let commentPath = "spots/\(currentTripId ?? "")/\(spotKey)/comment"
+            let _ = dbRef.child(imagePath).setValue(base64)
+            let _ = dbRef.child(commentPath).setValue("Test comment")
+        }
     }
     
     //MARK: - Methods
@@ -151,11 +161,11 @@ extension AddTripViewController: LocationManagerDelegate {
     }
     
     func didUpdateLocation(location: CLLocation) {
-        if(isStarted) {
-            print(location)
-            let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
-            spotsRef.setValue(["lat": location.coordinate.latitude,
-                               "lng":location.coordinate.longitude])
-        }
+      if(isStarted) {
+        let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
+        spotsRef.setValue(["lat": location.coordinate.latitude,
+                           "lng":location.coordinate.longitude])
+        self.currentSpotkey = spotsRef.key
+      }
     }
 }
