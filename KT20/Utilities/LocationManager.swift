@@ -25,16 +25,16 @@ public class LocationManager: NSObject {
             }
         }
     }
-    private var onRequestUserLocation: userCLLocation?
+    //private var onRequestUserLocation: userCLLocation?
     private var locationManager: CLLocationManager!
     private(set) var formattedUserLocation: String?
     
-    private enum Mode {
-        case None
-        case Single
-        case Track
-    }
-    private var mode = Mode.None
+//    private enum Mode {
+//        case None
+//        case Single
+//        case Track
+//    }
+//    private var mode = Mode.None
     weak private(set) var timer: Timer?
     
     override init() {
@@ -42,7 +42,7 @@ public class LocationManager: NSObject {
         DispatchQueue.main.async {
             self.locationManager = CLLocationManager()
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            //locationManager.distanceFilter = 1000
+            self.locationManager.distanceFilter = 10.0
             if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.notDetermined {
                 self.locationManager.requestAlwaysAuthorization()
             }
@@ -59,54 +59,51 @@ public class LocationManager: NSObject {
     
     // Start getting location
     public func startLocation() {
-        mode = .Single
-        //locationManager.distanceFilter = 1000
         locationManager?.startUpdatingLocation()
     }
-    
+
     // Stop getting location
     public func stopLocation() {
         locationManager?.stopUpdatingLocation()
-        mode = .None
     }
-    
-    // Start keeping a record of location, eventually to make a PolyLine
-    // No callback for this one
-    public func startLocationTrack() {
-        mode = .Track
-        locationManager?.startUpdatingLocation()
-        // For tracks we want a lot more detail
-        locationManager.distanceFilter = 3.0
-    }
-    
-    // Switch from tracking to single mode
-    public func stopLocationTrack() {
-        mode = .Single
-        locationTrack = nil
-    }
+//
+//    // Start keeping a record of location, eventually to make a PolyLine
+//    // No callback for this one
+//    public func startLocationTrack() {
+//        mode = .Track
+//        locationManager?.startUpdatingLocation()
+//        // For tracks we want a lot more detail
+//        locationManager.distanceFilter = 3.0
+//    }
+//
+//    // Switch from tracking to single mode
+//    public func stopLocationTrack() {
+//        mode = .Single
+//        locationTrack = nil
+//    }
     
     // Used when making a polyline track
-    fileprivate var locationTrack: [CLLocationCoordinate2D]?
-    
+//    fileprivate var locationTrack: [CLLocationCoordinate2D]?
+//
     // Start requesting the location updates
-    func getUserLocation(location: @escaping userCLLocation) {
-        startLocation()
-        onRequestUserLocation = location
-    }
+//    func getUserLocation(location: @escaping userCLLocation) {
+//        startLocation()
+//        onRequestUserLocation = location
+//    }
     
     // Return the current location track since when we started recording
-    func getUserTrack() -> [CLLocationCoordinate2D] {
-        guard let track = locationTrack else {
-            return []
-        }
-        
-        return track
-    }
-    
-    // Return true if we're actively tracking
-    func isTracking() -> Bool {
-        return locationTrack != nil
-    }
+//    func getUserTrack() -> [CLLocationCoordinate2D] {
+//        guard let track = locationTrack else {
+//            return []
+//        }
+//        
+//        return track
+//    }
+//
+//    // Return true if we're actively tracking
+//    func isTracking() -> Bool {
+//        return locationTrack != nil
+//    }
     
     static func showEnableLocationAlert() {
         let alert = UIAlertController(title: "Allow Location Access", message: "This app needs access to your location. Turn on Location Services in your device settings.", preferredStyle: UIAlertController.Style.alert)
@@ -180,21 +177,23 @@ extension LocationManager: CLLocationManagerDelegate {
         guard locations.count > 0, let lastLocation = locations.last else {
             return
         }
-        
-        switch mode {
-        case .None:
-            // Shouldn't happen
-            break
-        case .Single:
-            onRequestUserLocation?(userLocation)
-        case .Track:
-            if locationTrack == nil {
-                locationTrack = [CLLocationCoordinate2D]()
-            }
-            if let location2d = userLocation?.coordinate {
-                locationTrack?.append(location2d)
-            }
-        }
+        userLocation = lastLocation
+        print(userLocation)
+        //onRequestUserLocation?(userLocation)
+//        switch mode {
+//        case .None:
+//            // Shouldn't happen
+//            break
+//        case .Single:
+//            onRequestUserLocation?(userLocation)
+//        case .Track:
+//            if locationTrack == nil {
+//                locationTrack = [CLLocationCoordinate2D]()
+//            }
+//            if let location2d = userLocation?.coordinate {
+//                locationTrack?.append(location2d)
+//            }
+//        }
     }
 }
 

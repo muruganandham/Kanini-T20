@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddTripViewController: UIViewController {
     
@@ -45,10 +46,10 @@ class AddTripViewController: UIViewController {
         super.viewDidLoad()
         
         isStarted = false
+        LocationManager.shared.startLocation()
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        
         if isStarted {
         } else {
             self.dismiss(animated: true, completion: nil)
@@ -57,45 +58,69 @@ class AddTripViewController: UIViewController {
     
     @IBAction func startButtonPressed(_ sender: Any) {
         isStarted = true
-        LocationManager.shared.getUserLocation { (location) in
-            SharedObjects.shared.activeTrip?.startTime = "\(Date())"
-            SharedObjects.shared.activeTrip?.sourceLat = "\(location?.coordinate.latitude)"
-            SharedObjects.shared.activeTrip?.sourceLong = "\(location?.coordinate.longitude)"
-            SharedObjects.shared.activeTrip?.tripId = UUID().uuidString.lowercased()
-            SharedObjects.shared.activeTrip?.routeArray = ["\(location?.coordinate.latitude), \(location?.coordinate.longitude)"]
-            location?.coordinate.lookupPlacemark(completionHandler: { (placemark) in
-                if let placemark = placemark, !placemark.fullAddress.isEmpty {
-                    SharedObjects.shared.activeTrip?.sourceAddress = placemark.fullAddress
-                }
-            })
+        guard let location = LocationManager.shared.userLocation else {
+            return
         }
+        SharedObjects.shared.activeTrip?.startTime = "\(Date())"
+        SharedObjects.shared.activeTrip?.sourceLat = "\(location.coordinate.latitude)"
+        SharedObjects.shared.activeTrip?.sourceLong = "\(location.coordinate.longitude)"
+        SharedObjects.shared.activeTrip?.tripId = UUID().uuidString.lowercased()
+        SharedObjects.shared.activeTrip?.routeArray = ["\(location.coordinate.latitude), \(location.coordinate.longitude)"]
+        location.coordinate.lookupPlacemark(completionHandler: { (placemark) in
+            if let placemark = placemark, !placemark.fullAddress.isEmpty {
+                SharedObjects.shared.activeTrip?.sourceAddress = placemark.fullAddress
+                self.startTrip()
+            }
+        })
     }
     
     @IBAction func stopButtonPressed(_ sender: Any) {
         isStarted = false
-        LocationManager.shared.getUserLocation { (location) in
-            SharedObjects.shared.activeTrip?.endTime = "\(Date())"
-            SharedObjects.shared.activeTrip?.destinationLat = "\(location?.coordinate.latitude)"
-            SharedObjects.shared.activeTrip?.destinationLong = "\(location?.coordinate.longitude)"
-            SharedObjects.shared.activeTrip?.routeArray.append("\(location?.coordinate.latitude), \(location?.coordinate.longitude)")
-            location?.coordinate.lookupPlacemark(completionHandler: { (placemark) in
-                if let placemark = placemark, !placemark.fullAddress.isEmpty {
-                    SharedObjects.shared.activeTrip?.destinationAddress = placemark.fullAddress
-                }
-                
-                //final
-                let trip = SharedObjects.shared.activeTrip
-                print(trip?.startTime)
-                print(trip?.sourceAddress)
-                print(trip?.endTime)
-                print(trip?.destinationAddress)
-                print(trip?.routeArray)
-            })
+        guard let location = LocationManager.shared.userLocation else {
+            return
         }
+        SharedObjects.shared.activeTrip?.endTime = "\(Date())"
+        SharedObjects.shared.activeTrip?.destinationLat = "\(location.coordinate.latitude)"
+        SharedObjects.shared.activeTrip?.destinationLong = "\(location.coordinate.longitude)"
+        SharedObjects.shared.activeTrip?.routeArray.append("\(location.coordinate.latitude), \(location.coordinate.longitude)")
+        location.coordinate.lookupPlacemark(completionHandler: { (placemark) in
+            if let placemark = placemark, !placemark.fullAddress.isEmpty {
+                SharedObjects.shared.activeTrip?.destinationAddress = placemark.fullAddress
+                LocationManager.shared.stopLocation()
+            }
+            
+            //final
+            let trip = SharedObjects.shared.activeTrip
+            print(trip?.startTime)
+            print(trip?.sourceAddress)
+            print(trip?.endTime)
+            print(trip?.destinationAddress)
+            print(trip?.routeArray)
+        })
     }
     
     @IBAction func addStopButtonPressed(_ sender: Any) {
     
 
+    }
+    
+    //MARK: - Methods
+    
+    fileprivate func startTrip() {
+        if let userId = UserManager.shared.userId {
+            var ref: DatabaseReference!
+            ref = Database.database().reference()
+            let tripsRef = ref.child("trips").child(userId).childByAutoId()
+            tripsRef.setValue(["title":"A",
+                               "sourceAddress": "",
+                               "destinationAddress": "",
+                               "sourceLat": 0.0,
+                               "sourceLong": 0.0,
+                               "destinationLat": 0.0,
+                               "destinationLong": 0.0,
+                               "startedAt": Date().timeIntervalSinceReferenceDate,
+                               "endedAt": Date().timeIntervalSinceReferenceDate,
+                               "kms": 5.0])
+        }
     }
 }

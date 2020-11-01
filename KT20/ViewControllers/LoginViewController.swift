@@ -75,9 +75,6 @@ class LoginViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             if let user = Auth.auth().currentUser {
-                print(user.uid)
-                print(user.email ?? "")
-                print(user.displayName ?? "")
                 self.loginButton.setTitle("Log Out", for: .normal)
                 self.loginButton.tag = 2
             }
