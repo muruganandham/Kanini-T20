@@ -23,11 +23,21 @@ class TripViewController: UIViewController {
         }
     }
     var tripsDictionary: Dictionary<String, Any>?
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu_logout"), style: .plain, target: self, action: #selector(onBackButton(_:)))
         self.title = "Home"
+        
+        refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
+        refreshControl.tintColor = .white
+        
+        if #available(iOS 10.0, *) {
+            tripsTableView.refreshControl = refreshControl
+        } else {
+            tripsTableView.addSubview(refreshControl)
+        }
         
         loginVC.modalPresentationStyle = .custom
         loginVC.onLogIn = { [weak self] user in
@@ -48,7 +58,15 @@ class TripViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        fetchTrips()
         
+    }
+    
+    @objc private func refreshWeatherData(_ sender: Any) {
+        fetchTrips()
+    }
+    
+    func fetchTrips() {
         let user = Auth.auth().currentUser
         if(user != nil )  {
             if let userID = Auth.auth().currentUser?.uid {
@@ -61,6 +79,7 @@ class TripViewController: UIViewController {
                     if let tempDic: Dictionary = snapshot.value as? Dictionary<String, Any> {
                         self.tripsDictionary = tempDic
                         self.tripsTableView.reloadData()
+                        self.refreshControl.endRefreshing()
                     }
                 })
             }
@@ -68,7 +87,7 @@ class TripViewController: UIViewController {
     }
     
     //MARK: - Methods
-    fileprivate func getSpotsBy(tripId: String) {
+    fileprivate func getSpotsBy(tripId: String, success: @escaping(Dictionary<String, Any>) -> Void, error: @escaping(String) -> Void) {
         let spotsRef = Database.database().reference(withPath: "spots/\(tripId)").queryOrdered(byChild: "createdAt")
         spotsRef.observeSingleEvent(of: .value, with: { snapshot in
             if !snapshot.exists() {
@@ -78,9 +97,7 @@ class TripViewController: UIViewController {
             print(snapshot)
             
             if let spotsDict: Dictionary = snapshot.value as? Dictionary<String, Any> {
-                print(spotsDict.count)
-                print(spotsDict.keys)
-                print(spotsDict.values)
+                success(spotsDict)
             }
         })
     }
@@ -161,11 +178,13 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
         let tripsArray = Array(tripsDict.keys)
-        print(tripsArray[indexPath.row])
-        
-        self.getSpotsBy(tripId: tripsArray[indexPath.row])
-        
-//        let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
-//        self.navigationController?.pushViewController(spotVC, animated: true)
+        self.getSpotsBy(tripId: tripsArray[indexPath.row]) { (dictionary) in
+            let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
+            spotVC.routeDict = dictionary
+            print(dictionary)
+            self.navigationController?.pushViewController(spotVC, animated: true)
+        } error: { (errorString) in
+            print("error: \(errorString)")
+        }
     }
 }

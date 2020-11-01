@@ -8,8 +8,19 @@
 import UIKit
 import Firebase
 import CoreLocation
+import MapKit
 
 class AddTripViewController: UIViewController {
+    
+    @IBOutlet weak var mapView: MKMapView! {
+        didSet {
+            mapView.mapType = MKMapType.standard
+            mapView.isZoomEnabled = true
+            mapView.isScrollEnabled = true
+            mapView.userTrackingMode = .followWithHeading
+            mapView.showsUserLocation = true
+        }
+    }
     
     @IBOutlet weak var startButton: UIButton! {
         didSet {
@@ -158,10 +169,12 @@ extension AddTripViewController: LocationManagerDelegate {
     }
     
     func didUpdateLocation(location: CLLocation) {
+      if(isStarted) {
         let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
         spotsRef.setValue(["lat": location.coordinate.latitude,
                            "lng":location.coordinate.longitude,
                            "createdAt": Date().timeIntervalSinceReferenceDate])
         self.currentSpotkey = spotsRef.key
+      }
     }
 }
