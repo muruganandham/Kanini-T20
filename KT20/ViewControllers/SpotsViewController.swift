@@ -29,36 +29,39 @@ class SpotsViewController: UIViewController {
         var center: CLLocationCoordinate2D?
         routeDict?.forEach({ (point) in
             
-            let latLong: Dictionary = point.value as! Dictionary<String, NSNumber?>
-            print(latLong)
+            let latLong: Dictionary = point.value as! Dictionary<String, Any>
+            print("latLong: \(latLong)")
  
-            let lat: NSNumber = latLong["lat"]!!
-            let lng: NSNumber = latLong["lng"]!!
+            let lat: NSNumber = latLong["lat"]! as! NSNumber
+            let lng: NSNumber = latLong["lng"]! as! NSNumber
             
             print("----")
             print(lat)
             print(lng)
             
-            let point = CLLocationCoordinate2DMake(Double(truncating: lat), Double(truncating: lng));
+            
+            if(points.count < 10) {
+            let point = CLLocationCoordinate2DMake(lat.doubleValue, lng.doubleValue);
             if(center == nil) {
                 center = point
             }
             points.append(point)
+            print("point: \(point)")
+            }
         })
         
         print("points: \(points)")
         
-//        let point1 = CLLocationCoordinate2DMake(-73.761105, 41.017791);
-//        let point2 = CLLocationCoordinate2DMake(-73.760701, 41.019348);
-//        let point3 = CLLocationCoordinate2DMake(-73.757201, 41.019267);
-//        let point4 = CLLocationCoordinate2DMake(-73.757482, 41.016375);
-//
-//
+//        let point1 = CLLocationCoordinate2DMake(37.42261989, -122.22622172);
+//        let point2 = CLLocationCoordinate2DMake(37.41883236, -122.2175664);
+//        let point3 = CLLocationCoordinate2DMake(37.41926445, -122.22021307);
+//        //let point4 = CLLocationCoordinate2DMake(37.42384553, -122.22799483);
 //
 //        points.append(point1)
 //        points.append(point2)
 //        points.append(point3)
-//        points.append(point4)
+//        //points.append(point4)
+//        center = point1
         
         let geodesic = MKGeodesicPolyline(coordinates: points, count: points.count)
         mapView.addOverlay(geodesic)

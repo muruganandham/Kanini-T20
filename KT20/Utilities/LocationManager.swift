@@ -149,22 +149,6 @@ extension LocationManager: CLLocationManagerDelegate {
         }
         userLocation = lastLocation
         self.delegate?.didUpdateLocation(location: lastLocation)
-//        print(userLocation)
-        //onRequestUserLocation?(userLocation)
-//        switch mode {
-//        case .None:
-//            // Shouldn't happen
-//            break
-//        case .Single:
-//            onRequestUserLocation?(userLocation)
-//        case .Track:
-//            if locationTrack == nil {
-//                locationTrack = [CLLocationCoordinate2D]()
-//            }
-//            if let location2d = userLocation?.coordinate {
-//                locationTrack?.append(location2d)
-//            }
-//        }
     }
 }
 

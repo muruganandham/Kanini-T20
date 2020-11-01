@@ -170,6 +170,12 @@ extension AddTripViewController: LocationManagerDelegate {
     
     func didUpdateLocation(location: CLLocation) {
       if(isStarted) {
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location.coordinate
+        annotation.title = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
+        mapView.addAnnotation(annotation)
+        
         let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
         spotsRef.setValue(["lat": location.coordinate.latitude,
                            "lng":location.coordinate.longitude,
