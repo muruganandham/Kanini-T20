@@ -63,8 +63,11 @@ class SpotsViewController: UIViewController {
 //        //points.append(point4)
 //        center = point1
         
-        let geodesic = MKGeodesicPolyline(coordinates: points, count: points.count)
-        mapView.addOverlay(geodesic)
+//        let geodesic = MKGeodesicPolyline(coordinates: points, count: points.count)
+//        mapView.addOverlay(geodesic)
+        
+        let polyline = MKPolyline(coordinates: points, count: points.count)
+        mapView?.addOverlay(polyline)
         
         UIView.animate(withDuration: 1.5, animations: { () -> Void in
             let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)

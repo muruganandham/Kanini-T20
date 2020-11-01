@@ -17,6 +17,7 @@ class AddTripViewController: UIViewController {
             mapView.mapType = MKMapType.standard
             mapView.isZoomEnabled = true
             mapView.isScrollEnabled = true
+            mapView.delegate = self
             mapView.userTrackingMode = .followWithHeading
             mapView.showsUserLocation = true
         }
@@ -61,6 +62,7 @@ class AddTripViewController: UIViewController {
         return ref
     }
     var currentSpotkey: String?
+    var points = [CLLocationCoordinate2D]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,11 +178,32 @@ extension AddTripViewController: LocationManagerDelegate {
         annotation.title = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
         mapView.addAnnotation(annotation)
         
+        let overlays = mapView.overlays
+        mapView.removeOverlays(overlays)
+        
+        points.append(location.coordinate)
+        let polyline = MKPolyline(coordinates: points, count: points.count)
+        mapView?.addOverlay(polyline)
+        
         let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
         spotsRef.setValue(["lat": location.coordinate.latitude,
                            "lng":location.coordinate.longitude,
                            "createdAt": Date().timeIntervalSinceReferenceDate])
         self.currentSpotkey = spotsRef.key
       }
+    }
+}
+
+extension AddTripViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay.isKind(of: MKPolyline.self){
+            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            polylineRenderer.fillColor = UIColor.blue
+            polylineRenderer.strokeColor = UIColor.blue
+            polylineRenderer.lineWidth = 2
+            
+            return polylineRenderer
+        }
+        return MKOverlayRenderer(overlay: overlay)
     }
 }
