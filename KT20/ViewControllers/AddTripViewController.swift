@@ -62,7 +62,7 @@ class AddTripViewController: UIViewController {
             return
         }
         SharedObjects.shared.activeTrip = Trip()
-        SharedObjects.shared.activeTrip?.startTime = "\(Date())"
+        SharedObjects.shared.activeTrip?.startTime = Date()
         SharedObjects.shared.activeTrip?.sourceLat = "\(location.coordinate.latitude)"
         SharedObjects.shared.activeTrip?.sourceLong = "\(location.coordinate.longitude)"
         SharedObjects.shared.activeTrip?.tripId = UUID().uuidString.lowercased()
@@ -80,7 +80,7 @@ class AddTripViewController: UIViewController {
         guard let location = LocationManager.shared.userLocation else {
             return
         }
-        SharedObjects.shared.activeTrip?.endTime = "\(Date())"
+        SharedObjects.shared.activeTrip?.endTime = Date()
         SharedObjects.shared.activeTrip?.destinationLat = "\(location.coordinate.latitude)"
         SharedObjects.shared.activeTrip?.destinationLong = "\(location.coordinate.longitude)"
         SharedObjects.shared.activeTrip?.routeArray?.append("\(location.coordinate.latitude), \(location.coordinate.longitude)")
