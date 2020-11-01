@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 class AddTripViewController: UIViewController {
     
@@ -42,6 +43,13 @@ class AddTripViewController: UIViewController {
         }
     }
     
+    var currentTripId: String!
+    var dbRef: DatabaseReference {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        return ref
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,6 +78,11 @@ class AddTripViewController: UIViewController {
         location.coordinate.lookupPlacemark(completionHandler: { (placemark) in
             if let placemark = placemark, !placemark.fullAddress.isEmpty {
                 SharedObjects.shared.activeTrip?.sourceAddress = placemark.fullAddress
+                if let trip = SharedObjects.shared.activeTrip, let tripId = self.startTrip(trip: trip) {
+                    print(tripId)
+                    LocationManager.shared.delegate = self
+                    self.currentTripId = tripId
+                }
             }
         })
     }
@@ -91,10 +104,6 @@ class AddTripViewController: UIViewController {
             
             //final
             print(SharedObjects.shared.activeTrip)
-            if let trip = SharedObjects.shared.activeTrip {
-                print(trip)
-                self.startTrip(trip: trip)
-            }
         })
     }
     
@@ -104,8 +113,7 @@ class AddTripViewController: UIViewController {
     }
     
     //MARK: - Methods
-    
-    fileprivate func startTrip(trip: Trip) {
+    fileprivate func startTrip(trip: Trip) -> String? {
         if let userId = UserManager.shared.userId, trip != nil {
             var ref: DatabaseReference!
             ref = Database.database().reference()
@@ -120,6 +128,21 @@ class AddTripViewController: UIViewController {
                                "startedAt": trip.startTime,
                                "endedAt": trip.endTime,
                                "kms": 5.0])
+            return tripsRef.key
         }
+        return nil
+    }
+}
+
+extension AddTripViewController: LocationManagerDelegate {
+    func didFailWithError(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func didUpdateLocation(location: CLLocation) {
+        print(location)
+        let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
+        spotsRef.setValue(["lat": location.coordinate.latitude,
+                           "lng":location.coordinate.longitude])
     }
 }
