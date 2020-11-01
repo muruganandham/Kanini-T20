@@ -133,3 +133,21 @@ extension UIImage {
         return imageData.base64EncodedString(options: Data.Base64EncodingOptions.endLineWithCarriageReturn)
     }
 }
+
+extension DateFormatter {
+    static let monthDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd"
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
+    }()
+    
+    static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh mm a"
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
+    }()
+}

@@ -43,6 +43,7 @@ class TripViewController: UIViewController {
         loginVC.onLogIn = { [weak self] user in
             self?.loginVC.dismiss(animated: true) {
                 print("dismissed")
+                self?.fetchTrips()
             }
         }
         loginVC.onLogOut = {
@@ -73,6 +74,7 @@ class TripViewController: UIViewController {
                 let ref = Database.database().reference(withPath: "trips/\(userID)").queryOrdered(byChild: "startedAt")
                 ref.observeSingleEvent(of: .value, with: { snapshot in
                     if !snapshot.exists() {
+                        self.refreshControl.endRefreshing()
                         return
                     }
                     print(snapshot)
@@ -165,6 +167,13 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
                 let tripObj = try decoder.decode(Trip.self, from: jsonData)
                 cell.sourceLabel.text = tripObj.sourceAddress
                 cell.destLabel.text = tripObj.destinationAddress
+                if let sT = tripObj.startedAt {
+                    let sDate = Date(timeIntervalSinceReferenceDate: sT)
+                    print(DateFormatter.monthDateFormatter.string(from: sDate))
+                    cell.dateLabel.text = DateFormatter.monthDateFormatter.string(from: sDate)
+                    cell.sourceTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
+                    cell.destTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
+                }
             } catch {
                 print(error.localizedDescription)
             }
