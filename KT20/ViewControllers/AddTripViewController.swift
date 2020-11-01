@@ -125,8 +125,8 @@ class AddTripViewController: UIViewController {
                                "sourceLong": trip.sourceLong,
                                "destinationLat": trip.destinationLat,
                                "destinationLong": trip.destinationLong,
-                               "startedAt": trip.startTime,
-                               "endedAt": trip.endTime,
+                               "startedAt": "\(trip.startTime)",
+                               "endedAt": "\(trip.endTime)",
                                "kms": 5.0])
             return tripsRef.key
         }
