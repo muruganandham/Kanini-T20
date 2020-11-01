@@ -137,6 +137,7 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
         }
         let key = Array(trips)[indexPath.row]
         if let dict = self.tripsDictionary?[key] {
+            print("dict: \(dict)")
             let jsonData = try! JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
             let decoder = JSONDecoder()
             do {
