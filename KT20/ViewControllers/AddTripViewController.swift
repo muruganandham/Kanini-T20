@@ -134,6 +134,12 @@ class AddTripViewController: UIViewController {
             let commentPath = "spots/\(currentTripId ?? "")/\(spotKey)/comment"
             let _ = dbRef.child(imagePath).setValue(base64)
             let _ = dbRef.child(commentPath).setValue("Test comment")
+            
+            //add a map pointer
+//            let annotation = MKPointAnnotation()
+//            annotation.coordinate = location.coordinate
+//            annotation.title = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
+//            mapView.addAnnotation(annotation)
         }
     }
     
@@ -172,11 +178,6 @@ extension AddTripViewController: LocationManagerDelegate {
     
     func didUpdateLocation(location: CLLocation) {
       if(isStarted) {
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location.coordinate
-        annotation.title = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
-        mapView.addAnnotation(annotation)
         
         let overlays = mapView.overlays
         mapView.removeOverlays(overlays)

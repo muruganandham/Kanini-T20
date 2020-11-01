@@ -173,6 +173,9 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
                     cell.dateLabel.text = DateFormatter.monthDateFormatter.string(from: sDate)
                     cell.sourceTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
                     cell.destTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
+                    let locImage = UIImage(named: "menu_track_loc")
+                    cell.sourceIcon.image = locImage
+                    cell.destIcon.image = locImage
                 }
             } catch {
                 print(error.localizedDescription)

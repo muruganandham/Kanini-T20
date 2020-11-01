@@ -11,6 +11,7 @@ import MapKit
 class SpotsViewController: UIViewController {
     
     var routeDict: Dictionary<String, Any>?
+    var spotArray = [Spot]()
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
@@ -28,63 +29,41 @@ class SpotsViewController: UIViewController {
         var points: [CLLocationCoordinate2D] = []
         var center: CLLocationCoordinate2D?
         
-        let sortedArray = routeDict?.sorted(by: { item1, item2 in
+        let ss = routeDict?.forEach({ dict in
             
-            let dict1 = item1.value as! Dictionary<String, Any>
-            let dict2 = item2.value as! Dictionary<String, Any>
-            
-            print("*****************")
-            print("**\(dict1["createdAt"])")
-            let string: String = "\(dict1["createdAt"])"
-            print("**\(DateFormatter.iso8601Full.date(from: string))")
-            print("*****************")
-
-            return true
+            let jsonData = try! JSONSerialization.data(withJSONObject: dict.value, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let decoder = JSONDecoder()
+            do {
+                let spotObj = try decoder.decode(Spot.self, from: jsonData)
+                spotArray.append(spotObj)
+                
+            } catch {
+                print(error.localizedDescription)
+            }
         })
         
-        sortedArray?.forEach({ (point) in
-            
-            let latLong: Dictionary = point.value as! Dictionary<String, Any>
-            print("latLong: \(latLong)")
-            
-            let lat: NSNumber = latLong["lat"]! as! NSNumber
-            let lng: NSNumber = latLong["lng"]! as! NSNumber
-            
-            print("----")
-            print(lat)
-            print(lng)
-            
-            
-            let point = CLLocationCoordinate2DMake(lat.doubleValue, lng.doubleValue);
+        let sortedArray = spotArray.sorted { (spot, spot2) -> Bool in
+            return spot.createdAt ?? 0.0 > spot2.createdAt ?? 0.0
+        }
+                
+        sortedArray.forEach({ (locPoint) in
+            let lat = locPoint.lat
+            let lng = locPoint.lng
+
+            let point = CLLocationCoordinate2DMake(lat!, lng!);
             if(center == nil) {
                 center = point
             }
             
             points.append(point)
             
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = point
-            annotation.title = "\(point.latitude), \(point.longitude)"
-            mapView.addAnnotation(annotation)
-            
-            print("point: \(point)")
-        })
-        
-        print("points: \(points)")
-        
-        //        let point1 = CLLocationCoordinate2DMake(37.42261989, -122.22622172);
-        //        let point2 = CLLocationCoordinate2DMake(37.41883236, -122.2175664);
-        //        let point3 = CLLocationCoordinate2DMake(37.41926445, -122.22021307);
-        //        //let point4 = CLLocationCoordinate2DMake(37.42384553, -122.22799483);
-        //
-        //        points.append(point1)
-        //        points.append(point2)
-        //        points.append(point3)
-        //        //points.append(point4)
-        //        center = point1
-        
-        //        let geodesic = MKGeodesicPolyline(coordinates: points, count: points.count)
-        //        mapView.addOverlay(geodesic)
+            if !(locPoint.image?.isEmpty ?? true) {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = point
+                annotation.title = "\(point.latitude), \(point.longitude)"
+                mapView.addAnnotation(annotation)
+                }
+            })
         
         let overlays = mapView.overlays
         mapView.removeOverlays(overlays)
