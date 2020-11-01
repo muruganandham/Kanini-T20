@@ -28,8 +28,8 @@ public struct Trip: Codable {
     var destinationAddress: String?
     var destinationLat: Double?
     var destinationLong: Double?
-    var startTime: Double?
-    var endTime: Double?
+    var startedAt: Double?
+    var endedAt: Double?
     var kms: Double?
     var tripId: String?
     var spots: [Spot?]?
@@ -43,8 +43,8 @@ public struct Trip: Codable {
         case destinationAddress
         case destinationLat
         case destinationLong
-        case startTime
-        case endTime
+        case startedAt
+        case endedAt
         case kms
         case tripId
         case spots

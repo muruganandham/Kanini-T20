@@ -84,7 +84,7 @@ class AddTripViewController: UIViewController {
             return
         }
         SharedObjects.shared.activeTrip = Trip()
-        SharedObjects.shared.activeTrip?.startTime = Date().timeIntervalSinceReferenceDate
+        SharedObjects.shared.activeTrip?.startedAt = Date().timeIntervalSinceReferenceDate
         SharedObjects.shared.activeTrip?.sourceLat = location.coordinate.latitude
         SharedObjects.shared.activeTrip?.sourceLong = location.coordinate.longitude
         location.coordinate.lookupPlacemark(completionHandler: { (placemark) in
@@ -106,7 +106,7 @@ class AddTripViewController: UIViewController {
         guard let location = LocationManager.shared.userLocation else {
             return
         }
-        SharedObjects.shared.activeTrip?.endTime = Date().timeIntervalSinceReferenceDate
+        SharedObjects.shared.activeTrip?.endedAt = Date().timeIntervalSinceReferenceDate
         SharedObjects.shared.activeTrip?.destinationLat = location.coordinate.latitude
         SharedObjects.shared.activeTrip?.destinationLong = location.coordinate.longitude
         location.coordinate.lookupPlacemark(completionHandler: { (placemark) in
@@ -145,7 +145,7 @@ class AddTripViewController: UIViewController {
                                "sourceAddress": trip.sourceAddress ?? "",
                                "sourceLat": trip.sourceLat ?? 0.0,
                                "sourceLong": trip.sourceLong ?? 0.0,
-                               "startedAt": trip.startTime ?? 0.0])
+                               "startedAt": trip.startedAt ?? 0.0])
             return tripsRef.key
         }
         return nil
@@ -160,7 +160,7 @@ class AddTripViewController: UIViewController {
             let _ = dbRef.child(destinationAddPath).setValue(trip.destinationAddress ?? "")
             let _ = dbRef.child(destinationLat).setValue(trip.destinationLat ?? 0.0)
             let _ = dbRef.child(destinationLng).setValue(trip.destinationLong ?? 0.0)
-            let _ = dbRef.child(endedAt).setValue(trip.endTime ?? 0.0)
+            let _ = dbRef.child(endedAt).setValue(trip.endedAt ?? 0.0)
         }
     }
 }
