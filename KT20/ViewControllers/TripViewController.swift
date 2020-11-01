@@ -79,28 +79,8 @@ class TripViewController: UIViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        
         let addTripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "AddTripViewController") as! AddTripViewController
         self.present(addTripVC, animated: true, completion: nil)
-       // self.startTrip()
-    }
-    
-    fileprivate func startTrip() {
-        if let userId = UserManager.shared.userId {
-            var ref: DatabaseReference!
-            ref = Database.database().reference()
-            let tripsRef = ref.child("trips").child(userId).childByAutoId()
-            tripsRef.setValue(["title":"A",
-                               "sourceAddress": "",
-                               "destinationAddress": "",
-                               "sourceLat": 0.0,
-                               "sourceLong": 0.0,
-                               "destinationLat": 0.0,
-                               "destinationLong": 0.0,
-                               "startedAt": Date().timeIntervalSinceReferenceDate,
-                               "endedAt": Date().timeIntervalSinceReferenceDate,
-                               "kms": 5.0])
-        }
     }
 }
 
