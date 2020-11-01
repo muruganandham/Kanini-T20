@@ -15,6 +15,6 @@ public class ViewManager {
 }
 
 public class SharedObjects {
-    public static let shared = SharedObjects()
+    public static var shared = SharedObjects()
     var activeTrip: Trip?
 }

@@ -61,6 +61,7 @@ class AddTripViewController: UIViewController {
         guard let location = LocationManager.shared.userLocation else {
             return
         }
+        SharedObjects.shared.activeTrip = Trip()
         SharedObjects.shared.activeTrip?.startTime = "\(Date())"
         SharedObjects.shared.activeTrip?.sourceLat = "\(location.coordinate.latitude)"
         SharedObjects.shared.activeTrip?.sourceLong = "\(location.coordinate.longitude)"
@@ -82,7 +83,7 @@ class AddTripViewController: UIViewController {
         SharedObjects.shared.activeTrip?.endTime = "\(Date())"
         SharedObjects.shared.activeTrip?.destinationLat = "\(location.coordinate.latitude)"
         SharedObjects.shared.activeTrip?.destinationLong = "\(location.coordinate.longitude)"
-        SharedObjects.shared.activeTrip?.routeArray.append("\(location.coordinate.latitude), \(location.coordinate.longitude)")
+        SharedObjects.shared.activeTrip?.routeArray?.append("\(location.coordinate.latitude), \(location.coordinate.longitude)")
         location.coordinate.lookupPlacemark(completionHandler: { (placemark) in
             if let placemark = placemark, !placemark.fullAddress.isEmpty {
                 SharedObjects.shared.activeTrip?.destinationAddress = placemark.fullAddress

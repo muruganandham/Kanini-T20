@@ -33,9 +33,9 @@ public struct Trip: Codable {
     var endTime: String?
     var kms: Double?
     var tripId: String?
-    var spots: [Spot?]
-    var route: String
-    var routeArray: [String]
+    var spots: [Spot?]?
+    var route: String?
+    var routeArray: [String]?
 
     enum CodingKeys: String, CodingKey {
         case sourceAddress
