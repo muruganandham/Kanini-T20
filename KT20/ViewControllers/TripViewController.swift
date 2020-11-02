@@ -106,15 +106,22 @@ class TripViewController: UIViewController {
     //MARK: - Methods
     
     @objc func onBackButton(_ sender: UIBarButtonItem) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            print("Sign Out")
-            self.present(loginVC, animated: true, completion: nil)
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+        let alert = UIAlertController(title: "Sign out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
+        let signOutAction = UIAlertAction(title: "Sign out", style: .destructive) { [weak self] (action) in
+            guard let self = self else { return }
+            do {
+                let firebaseAuth = Auth.auth()
+                try firebaseAuth.signOut()
+                print("Sign Out")
+                self.present(self.loginVC, animated: true, completion: nil)
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
         }
-        return
+        alert.addAction(signOutAction)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -181,6 +188,7 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
         let tripObj = self.tripArray[indexPath.row]
         print(tripObj.tripId)
         let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
+        spotVC.tripId = tripObj.tripId
         self.navigationController?.pushViewController(spotVC, animated: true)
     }
 }
