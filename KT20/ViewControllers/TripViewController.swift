@@ -115,6 +115,9 @@ class TripViewController: UIViewController {
     
     @IBAction func addButtonPressed(_ sender: Any) {
         let addTripVC = UIStoryboard.main.instantiateViewController(withIdentifier: "AddTripViewController") as! AddTripViewController
+        addTripVC.didClose = { [weak self] in
+            self?.fetchTrips()
+        }
         self.present(addTripVC, animated: true, completion: nil)
     }
 }

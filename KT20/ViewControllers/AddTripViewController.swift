@@ -64,6 +64,7 @@ class AddTripViewController: UIViewController {
     var currentSpotkey: String?
     var currentLocation: CLLocation!
     var points = [CLLocationCoordinate2D]()
+    var didClose: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,9 @@ class AddTripViewController: UIViewController {
     @IBAction func closeButtonPressed(_ sender: Any) {
         if isStarted {
         } else {
+            if let close = self.didClose {
+                close()
+            }
             self.dismiss(animated: true, completion: nil)
         }
     }
