@@ -111,12 +111,6 @@ class CustomAnnotationView: MKAnnotationView {
             if let image = annotation.image {
                 imageView.image = image
                 
-                /*
-                 The image view has a width constraint to keep the image to a reasonable size. A height constraint to keep the aspect ratio
-                 proportions of the image is required to keep the image packed into the stack view. Without this constraint, the image's height
-                 will remain the intrinsic size of the image, resulting in extra height in the stack view that is not desired.
-                 */
-                
                 if let heightConstraint = imageHeightConstraint {
                     imageView.removeConstraint(heightConstraint)
                 }
