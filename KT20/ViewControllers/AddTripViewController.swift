@@ -106,6 +106,10 @@ class AddTripViewController: UIViewController {
         guard let location = LocationManager.shared.userLocation else {
             return
         }
+        
+        removeOverlays()
+        removeAnnotations()
+        
         SharedObjects.shared.activeTrip?.endedAt = Date().timeIntervalSinceReferenceDate
         SharedObjects.shared.activeTrip?.destinationLat = location.coordinate.latitude
         SharedObjects.shared.activeTrip?.destinationLong = location.coordinate.longitude
@@ -124,7 +128,7 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func addStopButtonPressed(_ sender: UIButton) {
-        guard let spotKey = currentSpotkey else {
+        guard let spotKey = currentSpotkey, let location = LocationManager.shared.userLocation else {
             return
         }
         
@@ -140,13 +144,31 @@ class AddTripViewController: UIViewController {
         alert.popoverPresentationController?.sourceRect = sender.bounds
         self.present(alert, animated: true, completion: nil)
         /*let image = UIImage(named: "menu_logo")
-        if let base64 = image?.toBase64() {
-            print(spotKey)
-            let imagePath = "spots/\(currentTripId ?? "")/\(spotKey)/base64Image"
-            let commentPath = "spots/\(currentTripId ?? "")/\(spotKey)/comment"
-            let _ = dbRef.child(imagePath).setValue(base64)
-            let _ = dbRef.child(commentPath).setValue("Test comment")
-        }*/
+         let image = UIImage(named: "menu_logo")
+         if let base64 = image?.toBase64() {
+         print(spotKey)
+         let imagePath = "spots/\(currentTripId ?? "")/\(spotKey)/base64Image"
+         let commentPath = "spots/\(currentTripId ?? "")/\(spotKey)/comment"
+         let _ = dbRef.child(imagePath).setValue(base64)
+         let _ = dbRef.child(commentPath).setValue("Test comment")
+         }*/
+        
+        //add a map pointer
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location.coordinate
+        annotation.title = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
+        mapView.addAnnotation(annotation)
+    }
+    
+    
+    func removeOverlays() {
+        let overlays = mapView.overlays
+        mapView.removeOverlays(overlays)
+    }
+    
+    func removeAnnotations() {
+        let annotations = mapView.annotations
+        mapView.removeAnnotations(annotations)
     }
     
     //MARK: - Methods
@@ -193,26 +215,20 @@ extension AddTripViewController: LocationManagerDelegate {
     }
     
     func didUpdateLocation(location: CLLocation) {
-      if(isStarted) {
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location.coordinate
-        annotation.title = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
-        mapView.addAnnotation(annotation)
-        
-        let overlays = mapView.overlays
-        mapView.removeOverlays(overlays)
-        
-        points.append(location.coordinate)
-        let polyline = MKPolyline(coordinates: points, count: points.count)
-        mapView?.addOverlay(polyline)
-        
-        let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
-        spotsRef.setValue(["lat": location.coordinate.latitude,
-                           "lng":location.coordinate.longitude,
-                           "createdAt": Date().timeIntervalSinceReferenceDate])
-        self.currentSpotkey = spotsRef.key
-      }
+        if(isStarted) {
+            
+            removeOverlays()
+            
+            points.append(location.coordinate)
+            let polyline = MKPolyline(coordinates: points, count: points.count)
+            mapView?.addOverlay(polyline)
+            
+            let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
+            spotsRef.setValue(["lat": location.coordinate.latitude,
+                               "lng":location.coordinate.longitude,
+                               "createdAt": Date().timeIntervalSinceReferenceDate])
+            self.currentSpotkey = spotsRef.key
+        }
     }
 }
 

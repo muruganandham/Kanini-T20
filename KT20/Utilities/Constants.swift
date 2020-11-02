@@ -8,16 +8,18 @@
 import Foundation
 
 struct Spot: Codable {
-    var note: String?
-    var image: String? // base64
+    var comment: String?
+    var base64Image: String? // base64
     var lat: Double?
-    var long: Double?
+    var lng: Double?
+    var createdAt: Double?
     
     enum CodingKeys: String, CodingKey {
-        case note
-        case image
+        case comment
+        case base64Image
         case lat
-        case long
+        case lng
+        case createdAt
     }
 }
 
