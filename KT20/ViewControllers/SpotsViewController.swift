@@ -36,6 +36,7 @@ class SpotsViewController: UIViewController {
         self.title = "Spots"
         
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(CustomAnnotation.self))
+        mapView.showsUserLocation = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +81,13 @@ class SpotsViewController: UIViewController {
                 imageAnnotation.title = locPoint.comment ?? ""
                 imageAnnotation.image = locPoint.base64Image?.getImageFromBase64()
                 mapView.addAnnotation(imageAnnotation)
+            }
+            
+            if let c = locPoint.comment, !c.isEmpty {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = point
+                annotation.title = c
+                self.mapView.addAnnotation(annotation)
             }
         })
         
