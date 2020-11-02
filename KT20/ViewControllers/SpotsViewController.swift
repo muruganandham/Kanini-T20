@@ -7,11 +7,20 @@
 
 import UIKit
 import MapKit
+import Firebase
+import NVActivityIndicatorView
 
 class SpotsViewController: UIViewController {
     
-    var routeDict: Dictionary<String, Any>?
+    var routeDict: Dictionary<String, Any>? {
+        didSet {
+            setupUI()
+        }
+    }
     var spotArray = [Spot]()
+    var tripId: String?
+    var points: [CLLocationCoordinate2D] = []
+    var center: CLLocationCoordinate2D?
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
@@ -26,10 +35,22 @@ class SpotsViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Spots"
         
-        var points: [CLLocationCoordinate2D] = []
-        var center: CLLocationCoordinate2D?
-        
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(CustomAnnotation.self))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            ViewManager.shared.activityIndicatorView.startAnimating(ActivityData())
+        }
+        self.getSpotsBy(tripId: self.tripId ?? "", success: { (dictionary) in
+            self.routeDict = dictionary
+        }) { (errorString) in
+            print("error: \(errorString)")
+        }
+    }
+    
+    func setupUI() {
         _ = routeDict?.forEach({ dict in
             let jsonData = try! JSONSerialization.data(withJSONObject: dict.value, options: JSONSerialization.WritingOptions.prettyPrinted)
             let decoder = JSONDecoder()
@@ -68,10 +89,26 @@ class SpotsViewController: UIViewController {
         let polyline = MKPolyline(coordinates: points, count: points.count)
         mapView?.addOverlay(polyline)
         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            ViewManager.shared.activityIndicatorView.stopAnimating()
+        }
+        
         UIView.animate(withDuration: 1.5, animations: { () -> Void in
             let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-            let region1 = MKCoordinateRegion(center: center!, span: span)
+            let region1 = MKCoordinateRegion(center: self.center!, span: span)
             self.mapView.setRegion(region1, animated: true)
+        })
+    }
+    
+    fileprivate func getSpotsBy(tripId: String, success: @escaping(Dictionary<String, Any>) -> Void, error: @escaping(String) -> Void) {
+        let spotsRef = Database.database().reference(withPath: "spots/\(tripId)").queryOrdered(byChild: "createdAt")
+        spotsRef.observeSingleEvent(of: .value, with: { snapshot in
+            if !snapshot.exists() {
+                return
+            }
+            if let spotsDict: Dictionary = snapshot.value as? Dictionary<String, Any> {
+                success(spotsDict)
+            }
         })
     }
 }

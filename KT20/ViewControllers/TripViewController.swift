@@ -104,17 +104,6 @@ class TripViewController: UIViewController {
     }
     
     //MARK: - Methods
-    fileprivate func getSpotsBy(tripId: String, success: @escaping(Dictionary<String, Any>) -> Void, error: @escaping(String) -> Void) {
-        let spotsRef = Database.database().reference(withPath: "spots/\(tripId)").queryOrdered(byChild: "createdAt")
-        spotsRef.observeSingleEvent(of: .value, with: { snapshot in
-            if !snapshot.exists() {
-                return
-            }
-            if let spotsDict: Dictionary = snapshot.value as? Dictionary<String, Any> {
-                success(spotsDict)
-            }
-        })
-    }
     
     @objc func onBackButton(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
@@ -220,13 +209,10 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
         /*guard let tripsDict = self.tripsDictionary else {
             return
         }
-        let tripsArray = Array(tripsDict.keys)
-        self.getSpotsBy(tripId: tripsArray[indexPath.row], success: { (dictionary) in
-            let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
-            spotVC.routeDict = dictionary
-            self.navigationController?.pushViewController(spotVC, animated: true)
-        }) { (errorString) in
-            print("error: \(errorString)")
-        }*/
+        let tripsArray = Array(tripsDict.keys)*/
+        
+        let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
+        spotVC.tripId = tripsArray[indexPath.row]
+        self.navigationController?.pushViewController(spotVC, animated: true)
     }
 }
