@@ -129,7 +129,7 @@ extension UITableView {
 
 extension UIImage {
     func toBase64() -> String? {
-        guard let imageData = self.jpegData(compressionQuality: 0.85) else { return nil }
+        guard let imageData = self.jpegData(compressionQuality: 0.05) else { return nil }
         return imageData.base64EncodedString(options: Data.Base64EncodingOptions.endLineWithCarriageReturn)
     }
 }

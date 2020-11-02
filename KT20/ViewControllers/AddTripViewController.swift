@@ -160,7 +160,8 @@ class AddTripViewController: UIViewController {
     fileprivate func startTrip(trip: Trip) -> String? {
         if let userId = UserManager.shared.userId, trip != nil {
             let tripsRef = dbRef.child("trips").child(userId).childByAutoId()
-            tripsRef.setValue(["title":"New trip",
+            tripsRef.setValue(["title": "Mark my trip",
+                               "tripId": tripsRef.key ?? "",
                                "sourceAddress": trip.sourceAddress ?? "",
                                "sourceLat": trip.sourceLat ?? 0.0,
                                "sourceLong": trip.sourceLong ?? 0.0,
