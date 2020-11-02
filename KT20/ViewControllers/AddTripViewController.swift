@@ -62,6 +62,7 @@ class AddTripViewController: UIViewController {
         return ref
     }
     var currentSpotkey: String?
+    var currentLocation: CLLocation!
     var points = [CLLocationCoordinate2D]()
     
     override func viewDidLoad() {
@@ -94,6 +95,8 @@ class AddTripViewController: UIViewController {
                     print(tripId)
                     LocationManager.shared.delegate = self
                     self.currentTripId = tripId
+                    self.currentLocation = location
+                    self.addSpot(location: location)
                 }
             } else {
                 print("❌ Source Placemark is not available")
@@ -128,36 +131,14 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func addStopButtonPressed(_ sender: UIButton) {
-        guard let spotKey = currentSpotkey, let location = LocationManager.shared.userLocation else {
+        guard let spotKey = currentSpotkey else {
             return
         }
-        
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Add from Photo Library", style: .default, handler: { (_) in
-            self.showImagePicker(sourceType: .photoLibrary, sourceView: sender)
-        }))
-        alert.addAction(UIAlertAction(title: "Take a Photo", style: .default, handler: { (_) in
-            self.showImagePicker(sourceType: .camera, sourceView: sender)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.popoverPresentationController?.sourceView = sender
-        alert.popoverPresentationController?.sourceRect = sender.bounds
-        self.present(alert, animated: true, completion: nil)
-        /*let image = UIImage(named: "menu_logo")
-         let image = UIImage(named: "menu_logo")
-         if let base64 = image?.toBase64() {
-         print(spotKey)
-         let imagePath = "spots/\(currentTripId ?? "")/\(spotKey)/base64Image"
-         let commentPath = "spots/\(currentTripId ?? "")/\(spotKey)/comment"
-         let _ = dbRef.child(imagePath).setValue(base64)
-         let _ = dbRef.child(commentPath).setValue("Test comment")
-         }*/
-        
-        //add a map pointer
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location.coordinate
-        annotation.title = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
-        mapView.addAnnotation(annotation)
+        let spotInfoVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotInfoViewController") as! SpotInfoViewController
+        spotInfoVC.selectedSpotKey = spotKey
+        spotInfoVC.selectedLocation = currentLocation
+        spotInfoVC.delegate = self
+        self.present(spotInfoVC, animated: true, completion: nil)
     }
     
     
@@ -198,14 +179,12 @@ class AddTripViewController: UIViewController {
         }
     }
     
-    fileprivate func showImagePicker(sourceType: UIImagePickerController.SourceType, sourceView: UIView) {
-        DispatchQueue.main.async {
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = sourceType
-            imagePicker.popoverPresentationController?.sourceView = sourceView
-            imagePicker.popoverPresentationController?.sourceRect = sourceView.bounds
-            self.present(imagePicker, animated: true, completion: nil)
-        }
+    fileprivate func addSpot(location: CLLocation) {
+        let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
+        spotsRef.setValue(["lat": location.coordinate.latitude,
+                           "lng":location.coordinate.longitude,
+                           "createdAt": Date().timeIntervalSinceReferenceDate])
+        self.currentSpotkey = spotsRef.key
     }
 }
 
@@ -216,18 +195,12 @@ extension AddTripViewController: LocationManagerDelegate {
     
     func didUpdateLocation(location: CLLocation) {
         if(isStarted) {
-            
             removeOverlays()
-            
             points.append(location.coordinate)
             let polyline = MKPolyline(coordinates: points, count: points.count)
             mapView?.addOverlay(polyline)
-            
-            let spotsRef = dbRef.child("spots").child(currentTripId).childByAutoId()
-            spotsRef.setValue(["lat": location.coordinate.latitude,
-                               "lng":location.coordinate.longitude,
-                               "createdAt": Date().timeIntervalSinceReferenceDate])
-            self.currentSpotkey = spotsRef.key
+            self.addSpot(location: location)
+            self.currentLocation = location
         }
     }
 }
@@ -243,5 +216,34 @@ extension AddTripViewController: MKMapViewDelegate {
             return polylineRenderer
         }
         return MKOverlayRenderer(overlay: overlay)
+    }
+}
+
+extension AddTripViewController: SpotInfoDelegate {
+    
+    func didSelectedSpot(spotKey: String, location: CLLocation, image: UIImage?, comments: String?) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if let comments = comments, !comments.isEmpty {
+                let commentPath = "spots/\(self.currentTripId ?? "")/\(spotKey)/comment"
+                let _ = self.dbRef.child(commentPath).setValue(comments)
+            }
+            
+            if let img = image {
+                if let base64 = img.toBase64() {
+                    let imagePath = "spots/\(self.currentTripId ?? "")/\(spotKey)/base64Image"
+                    let _ = self.dbRef.child(imagePath).setValue(base64)
+                    print("\n**********")
+                    print("\(imagePath)")
+                    print("✅ Image Added Successfully to \(spotKey)")
+                    print("************\n")
+                }
+            }
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location.coordinate
+            annotation.title = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
+            self.mapView.addAnnotation(annotation)
+        }
     }
 }

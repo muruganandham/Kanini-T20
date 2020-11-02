@@ -129,7 +129,7 @@ extension UITableView {
 
 extension UIImage {
     func toBase64() -> String? {
-        guard let imageData = self.pngData() else { return nil }
+        guard let imageData = self.jpegData(compressionQuality: 0.85) else { return nil }
         return imageData.base64EncodedString(options: Data.Base64EncodingOptions.endLineWithCarriageReturn)
     }
 }
@@ -158,4 +158,16 @@ extension DateFormatter {
         formatter.locale = Locale(identifier: "en_US_POSIX")
         return formatter
     }()
+}
+
+extension UIButton {
+    func disable() {
+        self.isUserInteractionEnabled = false
+        self.alpha = 0
+    }
+    
+    func enable() {
+        self.isUserInteractionEnabled = true
+        self.alpha = 1.0
+    }
 }

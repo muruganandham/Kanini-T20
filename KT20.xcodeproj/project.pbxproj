@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		06A0F395A3C2DE4339155EAA /* Pods_KT20_KT20UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4FCAC1A89D1B4D5B358FD7 /* Pods_KT20_KT20UITests.framework */; };
+		2A2B0A34254FE6D20046E1EB /* SpotInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B0A33254FE6D20046E1EB /* SpotInfoViewController.swift */; };
+		2A2B0A36254FEA820046E1EB /* GrowingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B0A35254FEA820046E1EB /* GrowingTextView.swift */; };
 		2A59DE76254D48BF009DBF50 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A59DE75254D48BF009DBF50 /* UserManager.swift */; };
 		52E6F1AE254C7F6D0098DA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1AD254C7F6D0098DA75 /* AppDelegate.swift */; };
 		52E6F1B0254C7F6D0098DA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1AF254C7F6D0098DA75 /* SceneDelegate.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A2B0A33254FE6D20046E1EB /* SpotInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotInfoViewController.swift; sourceTree = "<group>"; };
+		2A2B0A35254FEA820046E1EB /* GrowingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingTextView.swift; sourceTree = "<group>"; };
 		2A59DE75254D48BF009DBF50 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		455EAEEFC5AE853BD74ABAEE /* Pods-KT20-KT20UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.release.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.release.xcconfig"; sourceTree = "<group>"; };
 		4912C920B590CDA8E2CC2278 /* Pods-KT20Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.debug.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				52E6F1E6254C7FCA0098DA75 /* ViewManager.swift */,
 				52E6F1E7254C7FCA0098DA75 /* LocationManager.swift */,
 				2A59DE75254D48BF009DBF50 /* UserManager.swift */,
+				2A2B0A35254FEA820046E1EB /* GrowingTextView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				52E6F1EB254C7FCA0098DA75 /* SpotsViewController.swift */,
+				2A2B0A33254FE6D20046E1EB /* SpotInfoViewController.swift */,
 				52E6F1EC254C7FCA0098DA75 /* TripViewController.swift */,
 				52E6F2D8254CF10E0098DA75 /* AddTripViewController.swift */,
 				52E6F1ED254C7FCA0098DA75 /* LoginViewController.swift */,
@@ -530,8 +536,10 @@
 				2A59DE76254D48BF009DBF50 /* UserManager.swift in Sources */,
 				52E6F1F4254C7FCA0098DA75 /* TripViewController.swift in Sources */,
 				52E6F1AE254C7F6D0098DA75 /* AppDelegate.swift in Sources */,
+				2A2B0A36254FEA820046E1EB /* GrowingTextView.swift in Sources */,
 				52E6F1B0254C7F6D0098DA75 /* SceneDelegate.swift in Sources */,
 				52E6F1F1254C7FCA0098DA75 /* LocationManager.swift in Sources */,
+				2A2B0A34254FE6D20046E1EB /* SpotInfoViewController.swift in Sources */,
 				52E6F1F0254C7FCA0098DA75 /* ViewManager.swift in Sources */,
 				52E6F2D9254CF10E0098DA75 /* AddTripViewController.swift in Sources */,
 				52E6F1EF254C7FCA0098DA75 /* UIExtras.swift in Sources */,
