@@ -134,6 +134,14 @@ extension UIImage {
     }
 }
 
+extension String {
+    func getImageFromBase64() -> UIImage? {
+        let imageData = NSData(base64Encoded: self, options: NSData.Base64DecodingOptions(rawValue: 0))
+        let image = UIImage(data: imageData as! Data)
+        return image
+    }
+}
+
 extension DateFormatter {
     static let monthDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
