@@ -79,7 +79,22 @@ class TripViewController: UIViewController {
                     }
                     print(snapshot)
                     if let tempDic: Dictionary = snapshot.value as? Dictionary<String, Any> {
+                        self.tripArray.removeAll()
+                        var tempArray: [Trip] = []
                         self.tripsDictionary = tempDic
+                        _ = tempDic.forEach({ dict in
+                            let jsonData = try! JSONSerialization.data(withJSONObject: dict.value, options: JSONSerialization.WritingOptions.prettyPrinted)
+                            let decoder = JSONDecoder()
+                            do {
+                                let tripObj = try decoder.decode(Trip.self, from: jsonData)
+                                tempArray.append(tripObj)
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                        })
+                        self.tripArray = tempArray.sorted { (trip1, trip2) -> Bool in
+                            return trip1.startedAt ?? 0.0 > trip2.startedAt ?? 0.0
+                        }
                         self.tripsTableView.reloadData()
                         self.refreshControl.endRefreshing()
                     }
@@ -134,12 +149,12 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let trips = self.tripsDictionary?.keys, !trips.isEmpty else {
+        if self.tripArray.isEmpty {
             tableView.setEmptyView(title: "No results", message: "", messageImage: UIImage())
             return 0
         }
         tableView.restore()
-        return trips.count
+        return self.tripArray.count
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -154,8 +169,22 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "TripTableViewCell",
             for: indexPath) as! TripTableViewCell
-        
-        guard let trips = self.tripsDictionary?.keys, !trips.isEmpty else {
+        let tripObj = self.tripArray[indexPath.row]
+        cell.sourceLabel.text = tripObj.sourceAddress
+        cell.destLabel.text = tripObj.destinationAddress
+        let locImage = UIImage(named: "menu_track_loc")
+        cell.sourceIcon.image = locImage
+        cell.destIcon.image = locImage
+        if let sT = tripObj.startedAt {
+            let sDate = Date(timeIntervalSinceReferenceDate: sT)
+            cell.dateLabel.text = DateFormatter.monthDateFormatter.string(from: sDate)
+            cell.sourceTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
+        }
+        if let eT = tripObj.endedAt {
+            let eDate = Date(timeIntervalSinceReferenceDate: eT)
+            cell.destTimeLabel.text = DateFormatter.timeFormatter.string(from: eDate)
+        }
+        /*guard let trips = self.tripsDictionary?.keys, !trips.isEmpty else {
             return UITableViewCell()
         }
         let key = Array(trips)[indexPath.row]
@@ -166,25 +195,29 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
                 let tripObj = try decoder.decode(Trip.self, from: jsonData)
                 cell.sourceLabel.text = tripObj.sourceAddress
                 cell.destLabel.text = tripObj.destinationAddress
+                let locImage = UIImage(named: "menu_track_loc")
+                cell.sourceIcon.image = locImage
+                cell.destIcon.image = locImage
                 if let sT = tripObj.startedAt {
                     let sDate = Date(timeIntervalSinceReferenceDate: sT)
                     cell.dateLabel.text = DateFormatter.monthDateFormatter.string(from: sDate)
                     cell.sourceTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
-                    cell.destTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
-                    let locImage = UIImage(named: "menu_track_loc")
-                    cell.sourceIcon.image = locImage
-                    cell.destIcon.image = locImage
+                }
+                if let eT = tripObj.endedAt {
+                    let eDate = Date(timeIntervalSinceReferenceDate: eT)
+                    cell.destTimeLabel.text = DateFormatter.timeFormatter.string(from: eDate)
                 }
             } catch {
                 print(error.localizedDescription)
             }
-        }
+        }*/
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let tripsDict = self.tripsDictionary else {
+        let tripObj = self.tripArray[indexPath.row]
+        /*guard let tripsDict = self.tripsDictionary else {
             return
         }
         let tripsArray = Array(tripsDict.keys)
@@ -194,6 +227,6 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
             self.navigationController?.pushViewController(spotVC, animated: true)
         }) { (errorString) in
             print("error: \(errorString)")
-        }
+        }*/
     }
 }

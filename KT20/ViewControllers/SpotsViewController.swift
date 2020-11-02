@@ -56,7 +56,7 @@ class SpotsViewController: UIViewController {
             points.append(point)
             if !(locPoint.base64Image?.isEmpty ?? true) {
                 let imageAnnotation = CustomAnnotation(coordinate: point)
-                imageAnnotation.title = NSLocalizedString("Spot", comment: locPoint.comment ?? "")
+                imageAnnotation.title = locPoint.comment ?? ""
                 imageAnnotation.image = locPoint.base64Image?.getImageFromBase64()
                 mapView.addAnnotation(imageAnnotation)
             }
