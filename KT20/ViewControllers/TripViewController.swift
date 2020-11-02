@@ -173,46 +173,14 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
             let eDate = Date(timeIntervalSinceReferenceDate: eT)
             cell.destTimeLabel.text = DateFormatter.timeFormatter.string(from: eDate)
         }
-        /*guard let trips = self.tripsDictionary?.keys, !trips.isEmpty else {
-            return UITableViewCell()
-        }
-        let key = Array(trips)[indexPath.row]
-        if let dict = self.tripsDictionary?[key] {
-            let jsonData = try! JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
-            let decoder = JSONDecoder()
-            do {
-                let tripObj = try decoder.decode(Trip.self, from: jsonData)
-                cell.sourceLabel.text = tripObj.sourceAddress
-                cell.destLabel.text = tripObj.destinationAddress
-                let locImage = UIImage(named: "menu_track_loc")
-                cell.sourceIcon.image = locImage
-                cell.destIcon.image = locImage
-                if let sT = tripObj.startedAt {
-                    let sDate = Date(timeIntervalSinceReferenceDate: sT)
-                    cell.dateLabel.text = DateFormatter.monthDateFormatter.string(from: sDate)
-                    cell.sourceTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
-                }
-                if let eT = tripObj.endedAt {
-                    let eDate = Date(timeIntervalSinceReferenceDate: eT)
-                    cell.destTimeLabel.text = DateFormatter.timeFormatter.string(from: eDate)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }*/
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let tripObj = self.tripArray[indexPath.row]
-        /*guard let tripsDict = self.tripsDictionary else {
-            return
-        }
-        let tripsArray = Array(tripsDict.keys)*/
-        
+        print(tripObj.tripId)
         let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
-        spotVC.tripId = tripsArray[indexPath.row]
         self.navigationController?.pushViewController(spotVC, animated: true)
     }
 }
