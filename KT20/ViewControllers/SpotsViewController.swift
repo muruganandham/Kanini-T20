@@ -30,15 +30,12 @@ class SpotsViewController: UIViewController {
         var center: CLLocationCoordinate2D?
         
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(CustomAnnotation.self))
-        
         _ = routeDict?.forEach({ dict in
-            
             let jsonData = try! JSONSerialization.data(withJSONObject: dict.value, options: JSONSerialization.WritingOptions.prettyPrinted)
             let decoder = JSONDecoder()
             do {
                 let spotObj = try decoder.decode(Spot.self, from: jsonData)
                 spotArray.append(spotObj)
-                
             } catch {
                 print(error.localizedDescription)
             }
@@ -56,10 +53,7 @@ class SpotsViewController: UIViewController {
             if(center == nil) {
                 center = point
             }
-            
             points.append(point)
-            print("locPoint.image: \(locPoint.base64Image)")
-            
             if !(locPoint.base64Image?.isEmpty ?? true) {
                 let imageAnnotation = CustomAnnotation(coordinate: point)
                 imageAnnotation.title = NSLocalizedString("Spot", comment: locPoint.comment ?? "")
@@ -90,25 +84,20 @@ extension SpotsViewController: MKMapViewDelegate {
             polylineRenderer.fillColor = UIColor.blue
             polylineRenderer.strokeColor = UIColor.blue
             polylineRenderer.lineWidth = 2
-            
             return polylineRenderer
         }
         return MKOverlayRenderer(overlay: overlay)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
         guard !annotation.isKind(of: MKUserLocation.self) else {
             // Make a fast exit if the annotation is the `MKUserLocation`, as it's not an annotation view we wish to customize.
             return nil
         }
-        
         var annotationView: MKAnnotationView?
-        
         if let annotation = annotation as? CustomAnnotation {
             annotationView = setupCustomAnnotationView(for: annotation, on: mapView)
         }
-        
         return annotationView
     }
     

@@ -95,9 +95,6 @@ class TripViewController: UIViewController {
             if !snapshot.exists() {
                 return
             }
-            
-            print(snapshot)
-            
             if let spotsDict: Dictionary = snapshot.value as? Dictionary<String, Any> {
                 success(spotsDict)
             }
@@ -160,7 +157,6 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
         }
         let key = Array(trips)[indexPath.row]
         if let dict = self.tripsDictionary?[key] {
-            print("dict: \(dict)")
             let jsonData = try! JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
             let decoder = JSONDecoder()
             do {
@@ -169,7 +165,6 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.destLabel.text = tripObj.destinationAddress
                 if let sT = tripObj.startedAt {
                     let sDate = Date(timeIntervalSinceReferenceDate: sT)
-                    print(DateFormatter.monthDateFormatter.string(from: sDate))
                     cell.dateLabel.text = DateFormatter.monthDateFormatter.string(from: sDate)
                     cell.sourceTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
                     cell.destTimeLabel.text = DateFormatter.timeFormatter.string(from: sDate)
@@ -193,7 +188,6 @@ extension TripViewController: UITableViewDataSource, UITableViewDelegate {
         self.getSpotsBy(tripId: tripsArray[indexPath.row], success: { (dictionary) in
             let spotVC = UIStoryboard.main.instantiateViewController(withIdentifier: "SpotsViewController") as! SpotsViewController
             spotVC.routeDict = dictionary
-            print(dictionary)
             self.navigationController?.pushViewController(spotVC, animated: true)
         }) { (errorString) in
             print("error: \(errorString)")
