@@ -29,7 +29,9 @@ class SpotsViewController: UIViewController {
         var points: [CLLocationCoordinate2D] = []
         var center: CLLocationCoordinate2D?
         
-        let ss = routeDict?.forEach({ dict in
+        mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(CustomAnnotation.self))
+        
+        _ = routeDict?.forEach({ dict in
             
             let jsonData = try! JSONSerialization.data(withJSONObject: dict.value, options: JSONSerialization.WritingOptions.prettyPrinted)
             let decoder = JSONDecoder()
@@ -45,11 +47,11 @@ class SpotsViewController: UIViewController {
         let sortedArray = spotArray.sorted { (spot, spot2) -> Bool in
             return spot.createdAt ?? 0.0 > spot2.createdAt ?? 0.0
         }
-                
+        
         sortedArray.forEach({ (locPoint) in
             let lat = locPoint.lat
             let lng = locPoint.lng
-
+            
             let point = CLLocationCoordinate2DMake(lat!, lng!);
             if(center == nil) {
                 center = point
@@ -59,12 +61,12 @@ class SpotsViewController: UIViewController {
             print("locPoint.image: \(locPoint.base64Image)")
             
             if !(locPoint.base64Image?.isEmpty ?? true) {
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = point
-                annotation.title = "\(point.latitude), \(point.longitude)"
-                mapView.addAnnotation(annotation)
-                }
-            })
+                let imageAnnotation = CustomAnnotation(coordinate: point)
+                imageAnnotation.title = NSLocalizedString("Spot", comment: locPoint.comment ?? "")
+                imageAnnotation.image = locPoint.base64Image?.getImageFromBase64()
+                mapView.addAnnotation(imageAnnotation)
+            }
+        })
         
         let overlays = mapView.overlays
         mapView.removeOverlays(overlays)
@@ -81,6 +83,7 @@ class SpotsViewController: UIViewController {
 }
 
 extension SpotsViewController: MKMapViewDelegate {
+    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay.isKind(of: MKPolyline.self){
             let polylineRenderer = MKPolylineRenderer(overlay: overlay)
@@ -91,5 +94,26 @@ extension SpotsViewController: MKMapViewDelegate {
             return polylineRenderer
         }
         return MKOverlayRenderer(overlay: overlay)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard !annotation.isKind(of: MKUserLocation.self) else {
+            // Make a fast exit if the annotation is the `MKUserLocation`, as it's not an annotation view we wish to customize.
+            return nil
+        }
+        
+        var annotationView: MKAnnotationView?
+        
+        if let annotation = annotation as? CustomAnnotation {
+            annotationView = setupCustomAnnotationView(for: annotation, on: mapView)
+        }
+        
+        return annotationView
+    }
+    
+    
+    private func setupCustomAnnotationView(for annotation: CustomAnnotation, on mapView: MKMapView) -> MKAnnotationView {
+        return mapView.dequeueReusableAnnotationView(withIdentifier: NSStringFromClass(CustomAnnotation.self), for: annotation)
     }
 }

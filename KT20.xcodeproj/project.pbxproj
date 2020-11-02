@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		06A0F395A3C2DE4339155EAA /* Pods_KT20_KT20UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4FCAC1A89D1B4D5B358FD7 /* Pods_KT20_KT20UITests.framework */; };
 		2A59DE76254D48BF009DBF50 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A59DE75254D48BF009DBF50 /* UserManager.swift */; };
+		52DC4F1B2550121000D18D86 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC4F1A2550121000D18D86 /* CustomAnnotationView.swift */; };
+		52DC4F202550131200D18D86 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC4F1F2550131100D18D86 /* CustomAnnotation.swift */; };
 		52E6F1AE254C7F6D0098DA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1AD254C7F6D0098DA75 /* AppDelegate.swift */; };
 		52E6F1B0254C7F6D0098DA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F1AF254C7F6D0098DA75 /* SceneDelegate.swift */; };
 		52E6F1B5254C7F6D0098DA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F1B3254C7F6D0098DA75 /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		2A59DE75254D48BF009DBF50 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		455EAEEFC5AE853BD74ABAEE /* Pods-KT20-KT20UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20-KT20UITests.release.xcconfig"; path = "Target Support Files/Pods-KT20-KT20UITests/Pods-KT20-KT20UITests.release.xcconfig"; sourceTree = "<group>"; };
 		4912C920B590CDA8E2CC2278 /* Pods-KT20Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT20Tests.debug.xcconfig"; path = "Target Support Files/Pods-KT20Tests/Pods-KT20Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		52DC4F1A2550121000D18D86 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		52DC4F1F2550131100D18D86 /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		52E6F1AA254C7F6D0098DA75 /* KT20.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KT20.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E6F1AD254C7F6D0098DA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E6F1AF254C7F6D0098DA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 		52E6F1E3254C7FCA0098DA75 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				52DC4F1A2550121000D18D86 /* CustomAnnotationView.swift */,
+				52DC4F1F2550131100D18D86 /* CustomAnnotation.swift */,
 				52E6F1E4254C7FCA0098DA75 /* Constants.swift */,
 				52E6F1E5254C7FCA0098DA75 /* UIExtras.swift */,
 				52E6F1E6254C7FCA0098DA75 /* ViewManager.swift */,
@@ -526,6 +532,7 @@
 			files = (
 				52E6F2DF254CF9AF0098DA75 /* TripTableViewCell.swift in Sources */,
 				52E6F1F5254C7FCA0098DA75 /* LoginViewController.swift in Sources */,
+				52DC4F202550131200D18D86 /* CustomAnnotation.swift in Sources */,
 				52E6F1F3254C7FCA0098DA75 /* SpotsViewController.swift in Sources */,
 				2A59DE76254D48BF009DBF50 /* UserManager.swift in Sources */,
 				52E6F1F4254C7FCA0098DA75 /* TripViewController.swift in Sources */,
@@ -536,6 +543,7 @@
 				52E6F2D9254CF10E0098DA75 /* AddTripViewController.swift in Sources */,
 				52E6F1EF254C7FCA0098DA75 /* UIExtras.swift in Sources */,
 				52E6F1EE254C7FCA0098DA75 /* Constants.swift in Sources */,
+				52DC4F1B2550121000D18D86 /* CustomAnnotationView.swift in Sources */,
 				52E6F1FA254C7FD10098DA75 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
