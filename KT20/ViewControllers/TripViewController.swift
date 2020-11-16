@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import Floaty
+import NVActivityIndicatorView
 
 class TripViewController: UIViewController {
     
@@ -70,9 +71,17 @@ class TripViewController: UIViewController {
     func fetchTrips() {
         let user = Auth.auth().currentUser
         if(user != nil )  {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+                ViewManager.shared.activityIndicatorView.startAnimating(ActivityData())
+            }
             if let userID = Auth.auth().currentUser?.uid {
                 let ref = Database.database().reference(withPath: "trips/\(userID)").queryOrdered(byChild: "startedAt")
                 ref.observeSingleEvent(of: .value, with: { snapshot in
+                    
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+                        ViewManager.shared.activityIndicatorView.stopAnimating()
+                    }
+                    
                     if !snapshot.exists() {
                         self.refreshControl.endRefreshing()
                         return
